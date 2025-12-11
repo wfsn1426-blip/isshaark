@@ -96,3 +96,38 @@
   </main>
 
 <script>
+// simple interactivity: show detail content
+  const cards = document.querySelectorAll('.card');
+  const detail = document.getElementById('serviceDetail');
+  const title = document.getElementById('detailTitle');
+  const text = document.getElementById('detailText');
+  const actions = document.getElementById('detailActions');
+
+  const templates = {
+    ishaarek: {
+      title: 'إشعارك — الإنذار المبكر ضد الاحتيال',
+      text: 'خدمة وطنية داخل أبشر تساعدك على التحقق من الروابط والرسائل والأرقام المشبوهة وإصدار تنبيهات فورية قبل وقوع الاحتيال.',
+      actions: '<button class="btn primary">افتح إشعارك</button> <button class="btn outline" onclick="scrollToTop()">العودة إلى أعلى</button>'
+    },
+    passports: { title:'الجوازات', text:'خدمات الجوازات هنا.' , actions: '<button class="btn primary">الدخول</button>' },
+    traffic: { title:'المرور', text:'استعلام ومخالفات ورخص القيادة.' , actions: '<button class="btn primary">الدخول</button>' },
+    delegation: { title:'إدارة التفويض', text:'أنشئ أو ألغِ تفويضاتك بسهولة.', actions: '<button class="btn primary">إدارة التفويض</button>' },
+    donation: { title:'التبرعات', text:'دعم الجمعيات المصرح بها.', actions: '<button class="btn primary">تبرع الآن</button>' },
+    more: { title:'المزيد', text:'خدمات إضافية ومفيدة.', actions: '' }
+  };
+
+  cards.forEach(c=>{
+    c.addEventListener('click',()=>{
+      const key = c.dataset.service || 'more';
+      const tpl = templates[key]||templates.more;
+      title.textContent = tpl.title;
+      text.textContent = tpl.text;
+      actions.innerHTML = tpl.actions;
+      detail.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  function scrollToTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
+</script>
+</body>
+</html>
