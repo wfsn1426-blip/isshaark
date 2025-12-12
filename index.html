@@ -1,35 +1,66 @@
-// simple interactivity: show detail content
-  const cards = document.querySelectorAll('.card');
-  const detail = document.getElementById('serviceDetail');
-  const title = document.getElementById('detailTitle');
-  const text = document.getElementById('detailText');
-  const actions = document.getElementById('detailActions');
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إشعارك</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" ></script>
+</head>
 
-  const templates = {
-    ishaarek: {
-      title: 'إشعارك — الإنذار المبكر ضد الاحتيال',
-      text: 'خدمة وطنية داخل أبشر تساعدك على التحقق من الروابط والرسائل والأرقام المشبوهة وإصدار تنبيهات فورية قبل وقوع الاحتيال.',
-      actions: '<button class="btn primary">افتح إشعارك</button> <button class="btn outline" onclick="scrollToTop()">العودة إلى أعلى</button>'
-    },
-    passports: { title:'الجوازات', text:'خدمات الجوازات هنا.' , actions: '<button class="btn primary">الدخول</button>' },
-    traffic: { title:'المرور', text:'استعلام ومخالفات ورخص القيادة.' , actions: '<button class="btn primary">الدخول</button>' },
-    delegation: { title:'إدارة التفويض', text:'أنشئ أو ألغِ تفويضاتك بسهولة.', actions: '<button class="btn primary">إدارة التفويض</button>' },
-    donation: { title:'التبرعات', text:'دعم الجمعيات المصرح بها.', actions: '<button class="btn primary">تبرع الآن</button>' },
-    more: { title:'المزيد', text:'خدمات إضافية ومفيدة.', actions: '' }
-  };
+<body>
 
-  cards.forEach(c=>{
-    c.addEventListener('click',()=>{
-      const key = c.dataset.service || 'more';
-      const tpl = templates[key]||templates.more;
-      title.textContent = tpl.title;
-      text.textContent = tpl.text;
-      actions.innerHTML = tpl.actions;
-      detail.scrollIntoView({behavior:'smooth', block:'start'});
-    });
-  });
+<header class="header">
+    <div class="menu-icon">☰</div>
 
-  function scrollToTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
-</script>
-</body>
-</html>
+    <div class="logo">
+        <img src="icons/shield.svg" class="shield">
+        إشعارك
+    </div>
+
+    <div class="profile-icon">👤</div>
+</header>
+
+<section class="main">
+
+    <h2 class="title">إشعارك — نظام الإنذار المبكر ضد الاحتيال</h2>
+
+    <p class="subtitle">
+        خدمة تساعدك على التحقق من الروابط والرسائل المشبوهة وإصدار تنبيهات قبل وقوع الاحتيال.
+    </p>
+
+    <div class="grid">
+
+        <div class="box" onclick="go('report.html')">
+            <img src="icons/warning.svg" class="icon-img">
+            <p>رفع بلاغ</p>
+        </div>
+
+        <div class="box" onclick="go('check.html')">
+            <img src="icons/shield.svg" class="icon-img">
+            <p>فحص رابط</p>
+        </div>
+
+        <div class="box" onclick="go('ai.html')">
+            <img src="icons/profile.svg" class="icon-img">
+            <p>التحليل الذكي</p>
+        </div>
+
+        <div class="box" onclick="go('alerts.html')">
+            <img src="icons/menu.svg" class="icon-img">
+            <p>تنبيهات الاحتيال</p>
+        </div>
+
+        <div class="box" onclick="go('history.html')">
+            <img src="icons/menu.svg" class="icon-img">
+            <p>سجل البلاغات</p>
+        </div>
+
+        <div class="box" onclick="go('settings.html')">
+            <img src="icons/profile.svg" class="icon-img">
+            <p>إدارة الإشعارات</p>
+        </div>
+
+    </div>
+
+</section>
