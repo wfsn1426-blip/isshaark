@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>فحص رابط</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
 
+<header class="header">
+    <div class="menu-icon" onclick="go('index.html')">←</div>
+    <div class="logo"><img src="icons/shield.svg" class="shield"> فحص رابط</div>
+    <div></div>
+</header>
+
+<div class="card">
+    <label>أدخل الرابط للفحص:</label>
+    <input id="urlInput" class="input">
+
+    <button class="btn" onclick="checkURL()">فحص الرابط</button>
+
+    <p id="urlResult" style="margin-top:15px; font-size:18px;"></p>
+</div>
+
+</body>
+</html>
