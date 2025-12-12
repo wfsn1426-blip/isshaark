@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>رفع بلاغ</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
 
+<header class="header">
+    <div class="menu-icon" onclick="go('index.html')">←</div>
+    <div class="logo"><img src="icons/shield.svg" class="shield"> رفع بلاغ</div>
+    <div></div>
+</header>
+
+<div class="card">
+    <label>رقم / رابط / رسالة مشبوهة:</label>
+    <input id="number" class="input">
+
+    <label>تفاصيل إضافية:</label>
+    <textarea id="details" class="textarea"></textarea>
+
+    <button class="btn" onclick="saveReport()">إرسال البلاغ</button>
+</div>
+
+<div class="card" style="margin-top:20px;">
+    <h3>سجل البلاغات</h3>
+    <div id="report-list"></div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', displayReports);
+</script>
+
+</body>
+</html>
