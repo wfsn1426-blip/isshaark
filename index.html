@@ -5,32 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إشعارك</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" ></script>
+    <script src="app.js" defer></script>
 </head>
 
 <body>
 
 <header class="header">
     <div class="menu-icon">☰</div>
-
     <div class="logo">
         <img src="icons/shield.svg" class="shield">
         إشعارك
     </div>
-
     <div class="profile-icon">👤</div>
 </header>
 
 <section class="main">
 
+    <!-- أزرار كبار السن -->
+    <div class="accessibility-buttons">
+        <button id="increase-font">A+</button>
+        <button id="decrease-font">A-</button>
+        <button id="high-contrast">تباين</button>
+        <button id="read-text">🔊</button>
+    </div>
+
+    <!-- العنوان الرئيسي -->
     <h2 class="title">إشعارك — نظام الإنذار المبكر ضد الاحتيال</h2>
 
+    <!-- النص التوضيحي -->
     <p class="subtitle">
-        خدمة تساعدك على التحقق من الروابط والرسائل المشبوهة وإصدار تنبيهات قبل وقوع الاحتيال.
+        خدمة تساعدك على التحقق من الروابط والرسائل المشبوهة وإصدار تنبيهات قبل وقوع الاحتيال
     </p>
 
+    <!-- شبكة الأيقونات -->
     <div class="grid">
-
         <div class="box" onclick="go('report.html')">
             <img src="icons/warning.svg" class="icon-img">
             <p>رفع بلاغ</p>
@@ -60,7 +68,9 @@
             <img src="icons/profile.svg" class="icon-img">
             <p>إدارة الإشعارات</p>
         </div>
-
     </div>
 
 </section>
+
+</body>
+</html>
