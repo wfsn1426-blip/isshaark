@@ -30,24 +30,23 @@
       <textarea id="urlInput" class="url-box" placeholder="مثال: https://example.com"></textarea>
     </div>
 
-    <!-- زر الفحص -->
-    <button id="checkBtn" class="primary-btn">
-      <span class="btn-icon">🔍</span>
-      فحص الرابط الآن
-    </button>
+    <!-- نتيجة فحص الرابط -->
+<div class="result warning">
+  <div class="icon">
+    <!-- أيقونة التحذير -->
+    <svg width="64" height="64" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="28" fill="#FFF4E5" stroke="#F5B74A" stroke-width="4"/>
+      <line x1="32" y1="18" x2="32" y2="36" stroke="#F5B74A" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="32" cy="44" r="2.5" fill="#F5B74A"/>
+    </svg>
+  </div>
 
-    <!-- النتيجة -->
-    <div id="resultWrap" class="result-wrap" style="display:none;">
-      <div id="resultCard" class="result-card">
-        <div class="result-icon" id="resultIcon">✓</div>
-        <div class="result-text">
-          <div id="resultTitle" class="result-title">رابط آمن ✓</div>
-          <div id="resultDesc" class="result-desc">
-            هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام
-          </div>
-        </div>
-      </div>
-    </div>
+  <h3>رابط مزيف محتمل</h3>
+  <p>
+    تم الإبلاغ عن هذا الرابط من قبل عدة مستخدمين،
+    نوصي بشدة عدم فتحه أو إدخال أي بيانات فيه
+  </p>
+</div>
 
     <!-- زر الرجوع -->
     <a class="back-btn" href="index.html">العودة إلى إشعارك</a>
