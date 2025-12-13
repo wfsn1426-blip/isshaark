@@ -232,15 +232,17 @@ textarea{min-height:120px}
 <!-- فحص رابط -->
 <div id="link" class="hidden">
   <h2>فحص رابط مشبوه</h2>
-  <input placeholder="الصق الرابط هنا">
-  <button onclick="addLog('فحص رابط','مشبوه')">فحص الرابط الآن</button>
+  <p>أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
 
-  <div class="alert-box">
-    <div class="alert-icon">!</div>
-    <h3>رابط مزيف محتمل</h3>
-    <p>تم الإبلاغ عن هذا الرابط من عدة مستخدمين</p>
-  </div>
+  <input id="linkInput" placeholder="https://example.com/suspicious-link">
 
+  <button onclick="checkLink()">فحص الرابط الآن 🔍</button>
+
+  <!-- نتيجة الفحص -->
+  <div id="linkResult" class="hidden"></div>
+
+  <button class="outline" onclick="back()">العودة إلى إشعارك</button>
+</div>
   <button class="outline" onclick="back()">العودة إلى إشعارك</button>
 </div>
 
