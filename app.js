@@ -124,3 +124,6 @@ function sendChat() {
   speechSynthesis.speak(utter);
   input.value = '';
 }
+function showSafe(){
+  document.getElementById("resultSafe").classList.remove("hidden");
+}
