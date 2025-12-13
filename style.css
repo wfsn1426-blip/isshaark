@@ -532,3 +532,33 @@ body{
 .hidden{
   display: none;
 }
+/* textarea للذكاء */
+.text-area{
+  width: 100%;
+  min-height: 170px;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  line-height: 1.8;
+  direction: rtl;
+}
+
+/* زر العودة */
+.back-btn{
+  display: block;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 3px solid #2f5f45;
+  color: #2f5f45;
+  font-size: 22px;
+  font-weight: 900;
+  text-decoration: none;
+  background: #eef6f0;
+}
+
+.back-btn:hover{
+  filter: brightness(0.98);
+}
