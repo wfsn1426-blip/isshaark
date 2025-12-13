@@ -149,3 +149,28 @@ function checkLink(){
   // حالياً نتيجة تجريبية (عرض فقط)
   result.classList.remove("hidden");
 }
+import Report from "./Report";
+import { useState } from "react";
+
+function App() {
+  const [page, setPage] = useState("home");
+
+  return (
+    <div>
+      {page === "home" && (
+        <>
+          <h1>الصفحة الرئيسية</h1>
+
+          {/* أيقونة رفع البلاغ */}
+          <button onClick={() => setPage("report")}>
+            🚨 رفع بلاغ
+          </button>
+        </>
+      )}
+
+      {page === "report" && <Report />}
+    </div>
+  );
+}
+
+export default App;
