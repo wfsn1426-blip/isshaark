@@ -1,87 +1,151 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>إشعارك</title>
-  <link rel="stylesheet" href="./style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إشعارك</title>
+
+<style>
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Tahoma;
+  background:#f5f6f7;
+  color:#2b2f33;
+}
+.wrap{
+  max-width:760px;
+  margin:auto;
+  padding:16px;
+}
+.hero{
+  text-align:center;
+}
+.hero-icon{
+  width:60px;height:60px;margin:10px auto;
+  border-radius:18px;
+  background:#dfeee1;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;color:#2f7d32;
+}
+.hero h1{color:#6b7075;font-size:28px;}
+.hero p{color:#8a9199;font-size:14px;line-height:1.8;}
+
+.card{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:#fff;
+  border:2px solid #d7dadd;
+  border-radius:18px;
+  padding:18px;
+  margin-top:14px;
+  cursor:pointer;
+}
+.card:hover{background:#fafafa}
+.card.active{border-color:#6fae75}
+
+.arrow{font-size:22px;color:#7b848d}
+.text{flex:1}
+.title{font-size:22px;font-weight:900;color:#5d646b}
+.sub{font-size:14px;color:#8a9199}
+.icon{
+  width:60px;height:60px;
+  border-radius:16px;
+  background:#e3f1e5;
+  border:2px solid #6fae75;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;color:#2f7d32;
+}
+
+.back{
+  display:block;
+  margin-top:18px;
+  padding:14px;
+  text-align:center;
+  border:2px solid #6fae75;
+  border-radius:14px;
+  text-decoration:none;
+  color:#2f7d32;
+  font-weight:800;
+}
+</style>
 </head>
+
 <body>
+<div class="wrap">
 
-  <main class="wrap">
+  <div class="hero">
+    <div class="hero-icon">⚠️</div>
+    <h1>إشعارك - نظام الإنذار المبكر ضد الاحتيال</h1>
+    <p>
+      خدمة وطنية داخل أبشر تساعدك على التحقق من الروابط والرسائل
+      وإصدار تنبيهات فورية قبل وقوع الاحتيال
+    </p>
+  </div>
 
-    <div class="hero">
-      <div class="hero-icon">⚠️</div>
-      <h1>إشعارك - نظام الإنذار المبكر ضد الاحتيال</h1>
-      <p>
-        خدمة وطنية داخل أبشر تساعدك على التحقق من الروابط والرسائل والأرقام المشبوهة
-        واعتماد تنبيهات فورية قبل وقوع الاحتيال.
-      </p>
+  <div class="card" onclick="go('report.html')">
+    <div class="arrow">←</div>
+    <div class="text">
+      <div class="title">رفع بلاغ</div>
+      <div class="sub">أبلغ عن رقم أو رسالة أو رابط مشبوه</div>
     </div>
+    <div class="icon">!</div>
+  </div>
 
-    <!-- القائمة -->
-    <section class="list" aria-label="خدمات إشعارك">
+  <div class="card" onclick="go('check.html')">
+    <div class="arrow">←</div>
+    <div class="text">
+      <div class="title">فحص رابط</div>
+      <div class="sub">تحليل أي رابط وتحديد مستوى الخطورة</div>
+    </div>
+    <div class="icon">✓</div>
+  </div>
 
-      <button class="card" data-go="report.html">
-        <span class="arrow">←</span>
-        <span class="text">
-          <span class="title">رفع بلاغ</span>
-          <span class="sub">أبلغ عن رقم، رسالة، مكالمة أو رابط مشبوه يتم تحليله فورًا</span>
-        </span>
-        <span class="iconbox">!</span>
-      </button>
+  <div class="card" onclick="go('smart.html')">
+    <div class="arrow">←</div>
+    <div class="text">
+      <div class="title">التحليل الذكي</div>
+      <div class="sub">تحليل النصوص والرسائل المشبوهة</div>
+    </div>
+    <div class="icon">☺</div>
+  </div>
 
-      <button class="card" data-go="check.html">
-        <span class="arrow">←</span>
-        <span class="text">
-          <span class="title">فحص رابط</span>
-          <span class="sub">أدخل أي رابط ليتم فحصه بواسطة الذكاء الاصطناعي وتحديد مستوى الخطورة</span>
-        </span>
-        <span class="iconbox">✓</span>
-      </button>
+  <div class="card" onclick="go('alerts.html')">
+    <div class="arrow">←</div>
+    <div class="text">
+      <div class="title">تنبيهات الاحتيال</div>
+      <div class="sub">التحذيرات الصادرة من الجهات المختصة</div>
+    </div>
+    <div class="icon">🔔</div>
+  </div>
 
-      <button class="card" data-go="smart.html">
-        <span class="arrow">←</span>
-        <span class="text">
-          <span class="title">التحليل الذكي</span>
-          <span class="sub">حلل الرسائل أو النصوص المشبوهة باستخدام الذكاء الاصطناعي</span>
-        </span>
-        <span class="iconbox">☺︎</span>
-      </button>
+  <div class="card" onclick="go('logs.html')">
+    <div class="arrow">←</div>
+    <div class="text">
+      <div class="title">سجل البلاغات</div>
+      <div class="sub">جميع بلاغاتك السابقة ونتائجها</div>
+    </div>
+    <div class="icon">≡</div>
+  </div>
 
-      <button class="card" data-go="alerts.html">
-        <span class="arrow">←</span>
-        <span class="text">
-          <span class="title">تنبيهات الاحتيال</span>
-          <span class="sub">اطلع على التحذيرات العامة الصادرة من الجهات المختصة</span>
-        </span>
-        <span class="iconbox">🔔</span>
-      </button>
+  <div class="card active" onclick="go('notifications.html')">
+    <div class="arrow">←</div>
+    <div class="text">
+      <div class="title">إدارة الإشعارات</div>
+      <div class="sub">التحكم بقنوات تنبيهات الاحتيال</div>
+    </div>
+    <div class="icon">⚙</div>
+  </div>
 
-      <button class="card" data-go="logs.html">
-        <span class="arrow">←</span>
-        <span class="text">
-          <span class="title">سجل البلاغات</span>
-          <span class="sub">استعرض جميع بلاغاتك السابقة ونتائج التحقق</span>
-        </span>
-        <span class="iconbox">≡</span>
-      </button>
+  <a class="back" href="./index.html">العودة إلى أبشر</a>
 
-      <button class="card card-active" data-go="notifications.html">
-        <span class="arrow">←</span>
-        <span class="text">
-          <span class="title">إدارة الإشعارات</span>
-          <span class="sub">فعّل أو أوقف تنبيهات الاحتيال وحدد قناة الإشعار المناسبة لك</span>
-        </span>
-        <span class="iconbox">⚙︎</span>
-      </button>
+</div>
 
-    </section>
+<script>
+function go(page){
+  window.location.href = './' + page;
+}
+</script>
 
-    <a class="back-main" href="./index.html">العودة إلى أبشر</a>
-
-  </main>
-
-  <script src="./app.js"></script>
 </body>
 </html>
