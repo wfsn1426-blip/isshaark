@@ -20,7 +20,7 @@ body{
   direction:rtl;
 }
 
-/* ================= HEADER ================= */
+/* الهيدر */
 .header{
   background: linear-gradient(0deg, var(--green), var(--green2));
   color:#fff;
@@ -32,12 +32,9 @@ body{
   gap:16px;
 }
 
-.menu-icon,
-.profile-icon{
-  width:46px;
-  height:46px;
-  display:grid;
-  place-items:center;
+.menu-icon,.profile-icon{
+  width:46px;height:46px;
+  display:grid;place-items:center;
   border-radius:999px;
   background: rgba(255,255,255,.12);
   border: 1px solid rgba(255,255,255,.18);
@@ -45,13 +42,9 @@ body{
   line-height:1;
 }
 
-.logo{
-  font-weight:800;
-  font-size:34px;
-  letter-spacing:.4px;
-}
+.logo{font-weight:800;font-size:34px;letter-spacing:.4px}
 
-/* ================= MAIN ================= */
+/* المحتوى */
 .main{
   max-width:980px;
   margin:0 auto;
@@ -62,7 +55,6 @@ body{
   margin: 14px 0 8px;
   font-size: 38px;
   font-weight: 900;
-  color:#2c2c2c;
 }
 
 .subtitle{
@@ -73,7 +65,7 @@ body{
   max-width: 920px;
 }
 
-/* ================= CARDS LIST ================= */
+/* قائمة البطاقات */
 .grid{
   display:flex;
   flex-direction:column;
@@ -86,7 +78,7 @@ body{
   border:2px solid rgba(0,0,0,.08);
   border-radius: var(--radius);
   padding: 18px 18px;
-  padding-left: 64px; /* مساحة للسهم */
+  padding-left: 64px; /* للسهم */
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -96,13 +88,6 @@ body{
   user-select:none;
 }
 
-.box:hover{
-  filter: brightness(.99);
-  transform: translateY(-1px);
-  transition: .15s ease;
-}
-
-/* سهم يسار البطاقة */
 .box::before{
   content:"←";
   position:absolute;
@@ -112,7 +97,6 @@ body{
   opacity:.9;
 }
 
-/* عنوان البطاقة */
 .box p{
   margin:0;
   font-size:26px;
@@ -120,30 +104,30 @@ body{
   color:#2f2f2f;
 }
 
-/* ================= ICON BOX + SVG ================= */
+/* مربع الأيقونة */
 .icon-box{
-  width:76px;
-  height:76px;
+  width:76px;height:76px;
   border-radius:16px;
   border: 2px solid var(--border);
   background:#eef1ef;
   display:grid;
   place-items:center;
-  flex: 0 0 auto;
+  flex:0 0 auto;
 }
 
-.icon{
-  width:34px;
-  height:34px;
-  color: var(--green); /* يتحكم في لون الأيقونة */
+/* صورة الأيقونة */
+.icon-img{
+  width:40px;
+  height:40px;
+  display:block;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ريسبونسف */
 @media (max-width:640px){
   .logo{font-size:28px;}
   .title{font-size:28px;}
   .subtitle{font-size:16px;}
   .box p{font-size:20px;}
   .icon-box{width:66px;height:66px;}
-  .icon{width:30px;height:30px;}
+  .icon-img{width:34px;height:34px;}
 }
