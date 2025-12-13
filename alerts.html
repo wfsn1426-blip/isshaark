@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>تنبيهات الاحتيال</title>
-    <script src="app.js" defer></script>
+  <meta charset="UTF-8">
+  <title>تنبيهات الاحتيال</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-    <div class="menu-icon" onclick="go('index.html')">←</div>
-    <div class="logo"><img src="icons/shield.svg" class="shield"> تنبيهات الاحتيال</div>
-    <div></div>
-</header>
+<section class="alerts">
 
-<div class="card">
-    <h3>تنبيهات اليوم</h3>
-    <p>لا توجد تنبيهات حالياً</p>
-</div>
+  <div class="alert danger">
+    <div class="alert-text">
+      <h4>حملة تصيّد باسم البنوك السعودية</h4>
+      <span>منذ ساعتين</span>
+      <span class="tag danger">خطر عالي</span>
+    </div>
+    <div class="alert-icon">!</div>
+  </div>
+
+  <div class="alert warning">
+    <div class="alert-text">
+      <h4>رسائل مزيفة باسم أرامكو</h4>
+      <span>منذ 5 ساعات</span>
+      <span class="tag warning">تحذير متوسط</span>
+    </div>
+    <div class="alert-icon">⚠</div>
+  </div>
+
+  <div class="alert danger">
+    <div class="alert-text">
+      <h4>مواقع احتيالية تنتحل صفة أبشر</h4>
+      <span>منذ 8 ساعات</span>
+      <span class="tag danger">خطر عالي</span>
+    </div>
+    <div class="alert-icon">✖</div>
+  </div>
+
+  <div class="alert info">
+    <div class="alert-text">
+      <h4>تحديثات أمنية جديدة متاحة</h4>
+      <span>منذ يومين</span>
+      <span class="tag info">معلومة عامة</span>
+    </div>
+    <div class="alert-icon">i</div>
+  </div>
+
+  <a href="index.html" class="back-btn">العودة إلى إشعارك</a>
+
+</section>
 
 </body>
 </html>
