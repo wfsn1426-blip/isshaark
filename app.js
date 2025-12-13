@@ -1,74 +1,38 @@
-const btn = document.getElementById("checkBtn");
-const input = document.getElementById("urlInput");
-const result = document.getElementById("result");
-const icon = document.getElementById("resultIcon");
-const title = document.getElementById("resultTitle");
-const text = document.getElementById("resultText");
+document.addEventListener("DOMContentLoaded", () => {
+  const pages = document.querySelectorAll(".page");
+  const cards = document.querySelectorAll(".action-card[data-target]");
+  const backButtons = document.querySelectorAll(".back-btn");
 
-btn.onclick = () => {
-  const url = input.value.toLowerCase();
-
-  result.className = "result";
-
-  if(url.includes("bank") || url.includes("verify") || url.includes("login")){
-    result.classList.add("danger");
-    icon.innerHTML = "⛔";
-    title.innerText = "احتيال مؤكد";
-    text.innerText = "هذا الرابط يحتوي مؤشرات احتيالية عالية. لا تقم بفتحه.";
-  }
-  else if(url.includes("free") || url.includes("offer") || url.includes("canva")){
-    result.classList.add("warning");
-    icon.innerHTML = "⚠️";
-    title.innerText = "رابط مزيف محتمل";
-    text.innerText = "هذا الرابط قد يكون مشبوهاً. يرجى الحذر قبل الاستخدام.";
-  }
-  else{
-    result.classList.add("safe");
-    icon.innerHTML = "✔️";
-    title.innerText = "رابط آمن";
-    text.innerText = "هذا الرابط لم يتم الإبلاغ عنه ويبدو آمناً للاستخدام.";
+  function showPage(id) {
+    pages.forEach(p => p.classList.remove("active"));
+    const el = document.getElementById(id);
+    if (el) el.classList.add("active");
   }
 
-  result.classList.remove("hidden");
-};
-function checkLink(){
-  const link = document.getElementById("linkInput").value.trim();
-  const box = document.getElementById("resultBox");
-  const title = document.getElementById("resultTitle");
-  const desc = document.getElementById("resultDesc");
-  const icon = document.getElementById("resultIcon");
+  // فتح الصفحات عند الضغط
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const target = card.getAttribute("data-target");
+      showPage(target);
+      history.pushState({ page: target }, "", "#" + target);
+    });
+  });
 
-  box.className = "result"; // reset
-  box.classList.remove("hidden");
+  // زر الرجوع
+  backButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      showPage("home");
+      history.pushState({ page: "home" }, "", "#home");
+    });
+  });
 
-  if(link === ""){
-    title.textContent = "لم يتم إدخال رابط";
-    desc.textContent = "يرجى إدخال رابط لفحصه";
-    icon.textContent = "⚠️";
-    box.classList.add("warning");
-    return;
-  }
+  // دعم زر الرجوع في المتصفح
+  window.addEventListener("popstate", () => {
+    const hash = location.hash.replace("#", "") || "home";
+    showPage(hash);
+  });
 
-  // منطق تجريبي (Demo)
-  if(link.includes("bank") || link.includes("verify")){
-    title.textContent = "احتيال مؤكد";
-    desc.textContent = "تم رصد هذا الرابط كتهديد خطير ويُنصح بعدم فتحه.";
-    icon.textContent = "❌";
-    box.classList.add("danger");
-
-  }else if(link.includes("http")){
-    title.textContent = "رابط مزيف محتمل";
-    desc.textContent = "لم يتم التأكد من موثوقية الرابط بالكامل، يرجى الحذر.";
-    icon.textContent = "⚠️";
-    box.classList.add("warning");
-
-  }else{
-    title.textContent = "رابط آمن";
-    desc.textContent = "لم يتم تسجيل أي بلاغات على هذا الرابط حتى الآن.";
-    icon.textContent = "✅";
-    box.classList.add("safe");
-  }
-}
-function showSafe(){
-  document.getElementById("resultSafe").classList.remove("hidden");
-}
+  // فتح الصفحة من الرابط #linkcheck
+  const initial = location.hash.replace("#", "") || "home";
+  showPage(initial);
+});
