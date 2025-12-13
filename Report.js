@@ -158,3 +158,17 @@ function Report() {
 }
 
 export default Report;
+import Header from "./Header";
+
+function Report({ goHome }) {
+  return (
+    <div>
+      <Header title="رفع بلاغ" onBack={goHome} />
+
+      {/* محتوى الصفحة */}
+      <p>نموذج رفع البلاغ هنا...</p>
+    </div>
+  );
+}
+
+export default Report;
