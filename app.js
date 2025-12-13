@@ -174,3 +174,27 @@ function App() {
 }
 
 export default App;
+import { useState } from "react";
+import Report from "./Report";
+
+function App() {
+  const [page, setPage] = useState("home");
+
+  return (
+    <div>
+      {page === "home" && (
+        <>
+          <h1>إشعارك</h1>
+
+          <button onClick={() => setPage("report")}>🚨 رفع بلاغ</button>
+          <button onClick={() => setPage("log")}>📚 سجل البلاغات</button>
+        </>
+      )}
+
+      {page === "report" && <Report goHome={() => setPage("home")} />}
+      {/* نفس الفكرة لأي أيقونة ثانية */}
+    </div>
+  );
+}
+
+export default App;
