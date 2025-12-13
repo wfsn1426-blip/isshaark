@@ -1,113 +1,159 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>فحص رابط مشبوه</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فحص رابط</title>
 
+<style>
+body{
+  font-family: system-ui, -apple-system;
+  background:#f6f7f7;
+  margin:0;
+  padding:20px;
+  color:#333;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:6px;
+}
+
+.sub{
+  text-align:center;
+  color:#777;
+  margin-bottom:25px;
+}
+
+.box{
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  max-width:520px;
+  margin:auto;
+}
+
+label{
+  font-weight:600;
+  display:block;
+  margin-bottom:8px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1.8px solid #ddd;
+  font-size:15px;
+}
+
+button{
+  margin-top:16px;
+  width:100%;
+  padding:15px;
+  border-radius:14px;
+  border:none;
+  background:#2f7a4f;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:22px;
+  padding:22px;
+  border-radius:18px;
+  display:none;
+  text-align:center;
+}
+
+.icon{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+  margin:0 auto 12px;
+}
+
+.warn{
+  background:#f8efe4;
+  border:2px solid #e0b86b;
+  color:#a87822;
+}
+
+.safe{
+  background:#e7f4ec;
+  border:2px solid #5aa37c;
+  color:#2f7a4f;
+}
+
+.title{
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.desc{
+  font-size:14px;
+  color:#555;
+}
+
+.back{
+  margin-top:28px;
+  width:100%;
+  padding:15px;
+  border-radius:14px;
+  border:2px solid #2f7a4f;
+  background:#fff;
+  color:#2f7a4f;
+  font-size:16px;
+  cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- الهيدر (مثل باقي الصفحات) -->
-  <div class="topbar">
-    <div class="container">
-      <div class="brand">
-        <span>أبشر</span>
-      </div>
+<h1>فحص رابط مشبوه</h1>
+<div class="sub">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</div>
 
-      <div class="right"></div>
+<div class="box">
+  <label>الصق الرابط هنا</label>
+  <input id="url" placeholder="https://example.com">
+
+  <button onclick="check()">فحص الرابط الآن</button>
+
+  <!-- النتيجة -->
+  <div id="result" class="result warn">
+    <div class="icon">!</div>
+    <div class="title">رابط مزيف محتمل</div>
+    <div class="desc">
+      تم الإبلاغ عن هذا الرابط من قبل عدة مستخدمين،
+      نوصي بشدة عدم فتحه أو إدخال أي بيانات فيه.
     </div>
   </div>
 
-  <main class="container page">
-    <h1 class="page-title">فحص رابط مشبوه</h1>
-    <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
-
-    <!-- مربع الإدخال -->
-    <div class="input-card">
-      <div class="input-label">الصق الرابط هنا</div>
-      <textarea id="urlInput" class="url-box" placeholder="مثال: https://example.com"></textarea>
-    </div>
-
-    <!-- نتيجة فحص الرابط -->
-<div class="result warning">
-  <div class="icon">
-    <!-- أيقونة التحذير -->
-    <svg width="64" height="64" viewBox="0 0 64 64">
-      <circle cx="32" cy="32" r="28" fill="#FFF4E5" stroke="#F5B74A" stroke-width="4"/>
-      <line x1="32" y1="18" x2="32" y2="36" stroke="#F5B74A" stroke-width="4" stroke-linecap="round"/>
-      <circle cx="32" cy="44" r="2.5" fill="#F5B74A"/>
-    </svg>
-  </div>
-
-  <h3>رابط مزيف محتمل</h3>
-  <p>
-    تم الإبلاغ عن هذا الرابط من قبل عدة مستخدمين،
-    نوصي بشدة عدم فتحه أو إدخال أي بيانات فيه
-  </p>
+  <button class="back" onclick="location.href='index.html'">
+    العودة إلى إشعارك
+  </button>
 </div>
 
-    <!-- زر الرجوع -->
-    <a class="back-btn" href="index.html">العودة إلى إشعارك</a>
-  </main>
+<script>
+function check(){
+  const input = document.getElementById("url").value.trim();
+  const result = document.getElementById("result");
 
-  <script>
-    function classifyUrl(raw) {
-      const url = (raw || "").trim();
+  if(!input){
+    alert("الرجاء إدخال رابط");
+    return;
+  }
 
-      // بدون أي شيء
-      if (!url) return { type: "warn", title: "رابط مزيف محتمل", desc: "لم يتم إدخال رابط. تأكد من لصق الرابط كاملًا." };
-
-      // https
-      if (url.startsWith("https://")) {
-        return {
-          type: "safe",
-          title: "رابط آمن ✓",
-          desc: "هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام"
-        };
-      }
-
-      // http
-      if (url.startsWith("http://")) {
-        return {
-          type: "danger",
-          title: "رابط خطر - احتيال مؤكد",
-          desc: "الرابط يستخدم HTTP غير آمن وقد يكون مرتبطًا بمحاولات احتيال. يُنصح بعدم فتحه."
-        };
-      }
-
-      // بدون بروتوكول
-      return {
-        type: "warn",
-        title: "رابط مزيف محتمل",
-        desc: "الرابط بدون https/http. قد يكون مختصرًا أو مكتوبًا بشكل غير صحيح. تحقق قبل الفتح."
-      };
-    }
-
-    const btn = document.getElementById("checkBtn");
-    const input = document.getElementById("urlInput");
-    const wrap = document.getElementById("resultWrap");
-    const card = document.getElementById("resultCard");
-    const icon = document.getElementById("resultIcon");
-    const title = document.getElementById("resultTitle");
-    const desc = document.getElementById("resultDesc");
-
-    btn.addEventListener("click", () => {
-      const r = classifyUrl(input.value);
-
-      wrap.style.display = "block";
-      card.classList.remove("safe","warn","danger");
-      card.classList.add(r.type);
-
-      if (r.type === "safe") icon.textContent = "✓";
-      if (r.type === "warn") icon.textContent = "!";
-      if (r.type === "danger") icon.textContent = "✕";
-
-      title.textContent = r.title;
-      desc.textContent = r.desc;
-    });
-  </script>
+  result.style.display = "block";
+}
+</script>
 
 </body>
 </html>
