@@ -220,3 +220,31 @@ button.card{
   border:3px solid #d9534f;
   color:#d9534f;
 }
+.hidden {
+  display: none;
+}
+
+.result {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.result.safe {
+  background: #e6f4ea;
+  color: #1e7e34;
+}
+
+.result.warning {
+  background: #fff4e5;
+  color: #b26a00;
+}
+
+.result.danger {
+  background: #fdecea;
+  color: #b02a37;
+}
