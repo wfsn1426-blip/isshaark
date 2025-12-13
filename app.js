@@ -14,8 +14,18 @@ function checkLink(){
   const title = document.getElementById("resultTitle");
   const desc = document.getElementById("resultDesc");
   const icon = document.getElementById("resultIcon");
+function analyzeText(){
+  const text = document.getElementById("textInput").value.trim();
+  const result = document.getElementById("aiResult");
 
-  box.className = "result"; // reset
+  if(text === ""){
+    alert("الرجاء إدخال نص للتحليل");
+    return;
+  }
+
+  // حالياً نتيجة تجريبية (عرض فقط)
+  result.classList.remove("hidden");
+}  box.className = "result"; // reset
   box.classList.remove("hidden");
 
   if(link === ""){
