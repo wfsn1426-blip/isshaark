@@ -1,133 +1,58 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>رفع بلاغ احتيال</title>
-
-<style>
-body{
-  font-family: system-ui, -apple-system;
-  background:#f6f7f5;
-  margin:0;
-  color:#2f3e3a;
-}
-
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-h1{
-  text-align:center;
-  margin-bottom:10px;
-}
-
-.subtitle{
-  text-align:center;
-  color:#6b7c77;
-  margin-bottom:30px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:#fff;
-  border:2px solid #dfe7e3;
-  border-radius:14px;
-  padding:25px;
-  cursor:pointer;
-  transition:.2s;
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.card:hover{
-  border-color:#2f6f5e;
-  background:#f0f6f3;
-}
-
-.icon{
-  width:48px;
-  height:48px;
-  border-radius:12px;
-  background:#e8f1ee;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  color:#2f6f5e;
-}
-
-.back{
-  margin-top:30px;
-  display:block;
-  text-align:center;
-  padding:14px;
-  border-radius:12px;
-  border:2px solid #2f6f5e;
-  color:#2f6f5e;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.back:hover{
-  background:#2f6f5e;
-  color:#fff;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>رفع بلاغ احتيال</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<div class="container">
-  <h1>رفع بلاغ احتيال</h1>
-  <div class="subtitle">اختر نوع الاحتيال وستظهر الخانات المناسبة تلقائيًا</div>
 
-  <div class="grid">
-    <div class="card" onclick="go('sms.html')">
-      <div class="icon">✉️</div>
-      رسالة نصية مشبوهة
+  <!-- العنوان -->
+  <section class="report-page">
+    <h1 class="page-title">رفع بلاغ احتيال</h1>
+    <p class="page-subtitle">
+      اختر نوع الاحتيال وستظهر الخانات المناسبة تلقائيًا
+    </p>
+
+    <!-- شبكة الخيارات -->
+    <div class="report-grid">
+
+      <div class="report-card">
+        <img src="assets/icons/phone.svg" alt="">
+        <span>مكالمة تهديد</span>
+      </div>
+
+      <div class="report-card">
+        <img src="assets/icons/message.svg" alt="">
+        <span>رسالة نصية مشبوهة</span>
+      </div>
+
+      <div class="report-card active">
+        <img src="assets/icons/mobile.svg" alt="">
+        <span>رقم هاتف مشبوه</span>
+      </div>
+
+      <div class="report-card">
+        <img src="assets/icons/link.svg" alt="">
+        <span>رابط أو موقع مزيف</span>
+      </div>
+
+      <div class="report-card">
+        <img src="assets/icons/card.svg" alt="">
+        <span>طلب بيانات أو تحويل</span>
+      </div>
+
+      <div class="report-card">
+        <img src="assets/icons/user.svg" alt="">
+        <span>حساب ينتحل جهة حكومية</span>
+      </div>
+
     </div>
 
-    <div class="card" onclick="go('call.html')">
-      <div class="icon">📞</div>
-      مكالمة تهديد
-    </div>
+    <!-- زر العودة -->
+    <a href="index.html" class="back-btn">العودة إلى إشعارك</a>
+  </section>
 
-    <div class="card" onclick="go('phone.html')">
-      <div class="icon">📱</div>
-      رقم هاتف مشبوه
-    </div>
-
-    <div class="card" onclick="go('link.html')">
-      <div class="icon">🔗</div>
-      رابط أو موقع مزيف
-    </div>
-
-    <div class="card" onclick="go('bank.html')">
-      <div class="icon">💳</div>
-      طلب بيانات أو تحويل
-    </div>
-
-    <div class="card" onclick="go('account.html')">
-      <div class="icon">👤</div>
-      حساب ينتحل جهة حكومية
-    </div>
-  </div>
-
-  <a class="back" href="index.html">العودة إلى إشعارك</a>
-</div>
-
-<script>
-function go(page){
-  window.location.href = page;
-}
-</script>
 </body>
 </html>
