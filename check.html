@@ -111,6 +111,33 @@ function checkLink(){
   }
 }
 </script>
+<div class="container">
+  <h2>فحص رابط مشبوه</h2>
+  <p>أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
 
-</body>
+  <div class="input-box">
+    <input 
+      type="text" 
+      id="linkInput"
+      placeholder="https://example.com/suspicious-link"
+    >
+  </div>
+
+  <!-- النتيجة (مخفية بالبداية) -->
+  <div id="resultBox" class="result hidden">
+    <span id="resultIcon"></span>
+    <span id="resultText"></span>
+  </div>
+
+  <button id="checkBtn" class="primary-btn">
+    🔍 فحص الرابط الآن
+  </button>
+
+  <a href="alerts.html" class="secondary-btn">
+    العودة إلى إشعاراتك
+  </a>
+</div>
+
+<!-- ربط الجافاسكربت -->
+<script src="check.js"></script></body>
 </html>
