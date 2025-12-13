@@ -164,3 +164,77 @@ body{
   height:38px;
   display:block;
 }
+.grid{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.card{
+  background:#e9e9ea;
+  border:2px solid rgba(0,0,0,.10);
+  border-radius:18px;
+  padding:18px 18px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  cursor:pointer;
+}
+
+.card.active{
+  border-color:#6f8f7d;
+  box-shadow:0 10px 24px rgba(47,95,69,.12);
+}
+
+.arrow{
+  margin-left:auto;            /* يروح أقصى اليسار */
+  font-size:26px;
+  color:#2f5f45;
+  opacity:.9;
+}
+
+.card-text{
+  flex:1;
+  text-align:right;
+}
+
+.card-text h3{
+  margin:0 0 6px;
+  font-size:28px;
+  font-weight:800;
+  color:#2f2f2f;
+}
+
+.card-text p{
+  margin:0;
+  color:#6b6f73;
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* مربع الأيقونة */
+.icon-box{
+  width:76px;
+  height:76px;
+  border-radius:16px;
+  border:2px solid #6f8f7d;
+  background:#eef1ef;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+}
+
+.icon-img{
+  width:40px;
+  height:40px;
+  display:block;
+}
+
+@media (max-width:640px){
+  .card-text h3{font-size:22px;}
+  .card-text p{font-size:15px;}
+  .icon-box{width:66px;height:66px;}
+  .icon-img{width:34px;height:34px;}
+}
