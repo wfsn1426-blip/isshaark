@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>التحليل الذكي</title>
-
+  <title>فحص رابط</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,24 +11,27 @@
 
 <section class="container ai-page">
 
-  <h2 class="page-title">التحليل الذكي</h2>
-  <p class="page-desc">تحليل فوري للكلمات والنمط والسياق لاكتشاف الاحتيال</p>
+  <h2 class="page-title">فحص رابط مشبوه</h2>
+  <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
 
   <div class="input-box">
-    <div class="label">أدخل النص المشبوه</div>
-    <div class="example">مثال:</div>
-
-    <textarea id="aiText" placeholder="عزيزي العميل، تم إيقاف حسابك البنكي..."></textarea>
+    <div class="label">الصق الرابط هنا</div>
+    <textarea id="linkInput" placeholder="https://example.com"></textarea>
   </div>
 
-  <!-- زر فقط (بدون تحليل) -->
-  <button class="primary-btn" type="button">
-    تحليل النص <span class="mini-icon">▣</span>
-  </button>
+  <button class="primary-btn" onclick="checkLink()">فحص الرابط الآن</button>
+
+  <!-- النتيجة -->
+  <div id="resultBox" class="result hidden">
+    <div id="resultIcon" class="result-icon"></div>
+    <h3 id="resultTitle"></h3>
+    <p id="resultDesc"></p>
+  </div>
 
   <a class="secondary-btn" href="index.html">العودة إلى إشعارك</a>
 
 </section>
 
+<script src="app.js"></script>
 </body>
 </html>
