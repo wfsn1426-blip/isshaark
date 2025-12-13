@@ -28,38 +28,70 @@
 
   <div class="grid">
 
-    <div class="box" onclick="go('report.html')">
-      <div class="icon-box"><img class="icon-img" src="assets/icons/warning.svg" alt=""></div>
-      <p>رفع بلاغ</p>
+  <div class="card" onclick="go('report.html')">
+    <span class="arrow">←</span>
+    <div class="card-text">
+      <h3>رفع بلاغ</h3>
+      <p>أبلغ عن رقم، رسالة، مكالمة أو رابط مشبوه ليتم تحليله فورًا</p>
     </div>
-
-    <div class="box" onclick="go('check.html')">
-      <div class="icon-box"><img class="icon-img" src="assets/icons/check.svg" alt=""></div>
-      <p>فحص رابط</p>
+    <div class="icon-box">
+      <img class="icon-img" src="assets/icons/warning.svg" alt="">
     </div>
-
-    <div class="box" onclick="go('ai.html')">
-      <div class="icon-box"><img class="icon-img" src="assets/icons/ai.svg" alt=""></div>
-      <p>التحليل الذكي</p>
-    </div>
-
-    <div class="box" onclick="go('alerts.html')">
-      <div class="icon-box"><img class="icon-img" src="assets/icons/bell.svg" alt=""></div>
-      <p>تنبيهات الاحتيال</p>
-    </div>
-
-    <div class="box" onclick="go('history.html')">
-      <div class="icon-box"><img class="icon-img" src="assets/icons/history.svg" alt=""></div>
-      <p>سجل البلاغات</p>
-    </div>
-
-    <div class="box" onclick="go('settings.html')">
-      <div class="icon-box"><img class="icon-img" src="assets/icons/settings.svg" alt=""></div>
-      <p>إدارة الإشعارات</p>
-    </div>
-
   </div>
-</section>
 
-</body>
-</html>
+  <div class="card" onclick="go('check.html')">
+    <span class="arrow">←</span>
+    <div class="card-text">
+      <h3>فحص رابط</h3>
+      <p>أدخل أي رابط ليتم فحصه بواسطة الذكاء الاصطناعي وتحديد مستوى الخطورة</p>
+    </div>
+    <div class="icon-box">
+      <img class="icon-img" src="assets/icons/check.svg" alt="">
+    </div>
+  </div>
+
+  <div class="card" onclick="go('ai.html')">
+    <span class="arrow">←</span>
+    <div class="card-text">
+      <h3>التحليل الذكي</h3>
+      <p>حلّل الرسائل أو النصوص المشبوهة باستخدام الذكاء الاصطناعي لاكتشاف أنماط الاحتيال</p>
+    </div>
+    <div class="icon-box">
+      <img class="icon-img" src="assets/icons/ai.svg" alt="">
+    </div>
+  </div>
+
+  <div class="card active" onclick="go('alerts.html')">
+    <span class="arrow">←</span>
+    <div class="card-text">
+      <h3>تنبيهات الاحتيال</h3>
+      <p>اطلع على التحذيرات العامة الصادرة من وزارة الداخلية</p>
+    </div>
+    <div class="icon-box">
+      <img class="icon-img" src="assets/icons/bell.svg" alt="">
+    </div>
+  </div>
+
+  <div class="card" onclick="go('history.html')">
+    <span class="arrow">←</span>
+    <div class="card-text">
+      <h3>سجل البلاغات</h3>
+      <p>استعرض جميع بلاغاتك السابقة ونتائج التحقق</p>
+    </div>
+    <div class="icon-box">
+      <img class="icon-img" src="assets/icons/history.svg" alt="">
+    </div>
+  </div>
+
+  <div class="card" onclick="go('settings.html')">
+    <span class="arrow">←</span>
+    <div class="card-text">
+      <h3>إدارة الإشعارات</h3>
+      <p>فعّل أو أوقف تنبيهات الاحتيال وحدد قناة الإشعار المناسبة لك</p>
+    </div>
+    <div class="icon-box">
+      <img class="icon-img" src="assets/icons/settings.svg" alt="">
+    </div>
+  </div>
+
+</div>
