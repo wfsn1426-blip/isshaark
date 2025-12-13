@@ -1,813 +1,148 @@
 :root{
-  --green:#2f5f45;
-  --green2:#2b5640;
-  --border:#6f8f7d;
-  --bg:#f3f4f4;
-  --card:#e9e9ea;
-  --text:#2b2b2b;
-  --muted:#6b6f73;
-  --radius:18px;
+  --bg:#f5f6f7;
+  --card:#ffffff;
+  --border:#d7dadd;
+  --text:#2b2f33;
+  --muted:#6d7680;
+  --green:#2f7d32;
+  --green2:#2a6e2d;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+*{ box-sizing:border-box; }
 
 body{
   margin:0;
   background:var(--bg);
+  font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial;
   color:var(--text);
-  font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  direction:rtl;
 }
 
-/* الهيدر */
-.header{
-  background: linear-gradient(0deg, var(--green), var(--green2));
-  color:#fff;
-  padding: 18px 18px 22px;
-  box-shadow: 0 2px 14px rgba(0,0,0,.12);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
+.wrap{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 16px 28px;
 }
 
-.menu-icon,.profile-icon{
-  width:46px;height:46px;
-  display:grid;place-items:center;
-  border-radius:999px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.18);
-  font-size:22px;
-  line-height:1;
+.hero{
+  text-align:center;
+  padding: 10px 10px 18px;
 }
 
-.logo{font-weight:800;font-size:34px;letter-spacing:.4px}
-
-/* المحتوى */
-.main{
-  max-width:980px;
-  margin:0 auto;
-  padding: 18px 18px 42px;
-}
-
-.title{
-  margin: 14px 0 8px;
-  font-size: 38px;
-  font-weight: 900;
-}
-
-.subtitle{
-  margin: 0 0 24px;
-  color:var(--muted);
-  line-height:1.9;
-  font-size:18px;
-  max-width: 920px;
-}
-
-/* قائمة البطاقات */
-.grid{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-.card{
-  background:#e9e9ea;
-  border:2px solid rgba(0,0,0,.10);
-  border-radius:18px;
-  padding:18px 18px;
-  display:flex;
-  align-items:center;
-  gap:18px;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-  cursor:pointer;
-}
-
-.card.active{
-  border-color:#6f8f7d;
-  box-shadow:0 10px 24px rgba(47,95,69,.12);
-}
-
-.arrow{
-  margin-left:auto;            /* يروح أقصى اليسار */
-  font-size:26px;
-  color:#2f5f45;
-  opacity:.9;
-}
-
-.card-text{
-  flex:1;
-  text-align:right;
-}
-
-.card-text h3{
-  margin:0 0 6px;
-  font-size:28px;
-  font-weight:800;
-  color:#2f2f2f;
-}
-
-.card-text p{
-  margin:0;
-  color:#6b6f73;
-  font-size:18px;
-  line-height:1.8;
-}
-
-/* مربع الأيقونة */
-.icon-box{
-  width:76px;
-  height:76px;
-  border-radius:16px;
-  border:2px solid #6f8f7d;
-  background:#eef1ef;
+.hero-icon{
+  width:60px;
+  height:60px;
+  margin: 0 auto 10px;
+  border-radius: 18px;
   display:flex;
   align-items:center;
   justify-content:center;
-  flex:0 0 auto;
+  background: rgba(47,125,50,.15);
+  color: var(--green2);
+  font-size: 30px;
 }
 
-.icon-img{
-  width:40px;
-  height:40px;
-  display:block;
+.hero h1{
+  margin: 0 0 8px;
+  font-size: 30px;
+  color:#5b6167;
+  font-weight: 900;
 }
 
-@media (max-width:640px){
-  .card-text h3{font-size:22px;}
-  .card-text p{font-size:15px;}
-  .icon-box{width:66px;height:66px;}
-  .icon-img{width:34px;height:34px;}
+.hero p{
+  margin:0 auto;
+  max-width: 620px;
+  color:#8a9199;
+  line-height:1.9;
+  font-size: 14px;
 }
 
-.box{
-  position:relative;
-  background:var(--card);
-  border:2px solid rgba(0,0,0,.08);
-  border-radius: var(--radius);
+.list{
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.card{
+  width:100%;
+  border: 2px solid var(--border);
+  background: var(--card);
+  border-radius: 18px;
   padding: 18px 18px;
-  padding-left: 64px; /* للسهم */
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  cursor:pointer;
-  user-select:none;
-}
-
-.box::before{
-  content:"←";
-  position:absolute;
-  left:18px;
-  color: var(--green);
-  font-size: 26px;
-  opacity:.9;
-}
-
-.box p{
-  margin:0;
-  font-size:26px;
-  font-weight:800;
-  color:#2f2f2f;
-}
-
-/* مربع الأيقونة */
-.icon-box{
-  width:76px;height:76px;
-  border-radius:16px;
-  border: 2px solid var(--border);
-  background:#eef1ef;
-  display:grid;
-  place-items:center;
-  flex:0 0 auto;
-}
-
-/* صورة الأيقونة */
-.icon-img{
-  width:40px;
-  height:40px;
-  display:block;
-}
-
-/* ريسبونسف */
-@media (max-width:640px){
-  .logo{font-size:28px;}
-  .title{font-size:28px;}
-  .subtitle{font-size:16px;}
-  .box p{font-size:20px;}
-  .icon-box{width:66px;height:66px;}
-  .icon-img{width:34px;height:34px;}
-}
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-.center-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 28px;
-  font-weight: 700;
-  color: white;
-}
-/* ===== صفحة رفع بلاغ ===== */
-.report-page{
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-.page-title{
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.page-subtitle{
-  color: #666;
-  margin-bottom: 30px;
-  font-size: 18px;
-}
-
-/* الشبكة */
-.report-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-/* الكرت */
-.report-card{
-  background: #f6f6f6;
-  border-radius: 18px;
-  padding: 30px 20px;
-  text-align: center;
-  border: 2px solid #e0e0e0;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.report-card img{
-  width: 36px;
-  height: 36px;
-  margin-bottom: 12px;
-}
-
-.report-card span{
-  display: block;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* المحدد (مثل الصورة) */
-.report-card.active{
-  border-color: #2f6b57;
-  background: #eef4f1;
-}
-
-/* زر العودة */
-.back-btn{
-  display: block;
-  text-align: center;
-  padding: 16px;
-  border-radius: 14px;
-  border: 2px solid #2f6b57;
-  color: #2f6b57;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 18px;
-}
-.link-check{
-  max-width:700px;
-  margin:40px auto;
-  text-align:center;
-}
-
-.link-check h2{
-  font-size:32px;
-  font-weight:800;
-}
-
-.link-check .desc{
-  color:#777;
-  margin-bottom:20px;
-}
-
-.input-box{
-  border:2px solid #ddd;
-  border-radius:18px;
-  padding:20px;
-  margin-bottom:18px;
-}
-
-.input-box input{
-  width:100%;
-  border:none;
-  outline:none;
-  font-size:18px;
-  font-family:"Cairo";
-  background:transparent;
-}
-
-.check-btn{
-  background:#2f6b57;
-  color:#fff;
-  border:none;
-  border-radius:16px;
-  padding:16px 26px;
-  font-size:20px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-.check-btn:hover{
-  filter:brightness(.95);
-}
-
-/* النتيجة */
-.result{
-  margin-top:30px;
-  padding:30px;
-  border-radius:22px;
-  border:3px solid;
-}
-
-.result .icon{
-  font-size:48px;
-  margin-bottom:10px;
-}
-
-.result.safe{
-  background:#eef8f3;
-  border-color:#2f6b57;
-  color:#2f6b57;
-}
-
-.result.warning{
-  background:#fff6e5;
-  border-color:#e6a23c;
-  color:#e6a23c;
-}
-
-.result.danger{
-  background:#fdecec;
-  border-color:#d93025;
-  color:#d93025;
-}
-
-.hidden{
-  display:none;
-}
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>فحص رابط</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <section class="container check-page">
-
-    <h2 class="page-title">فحص رابط مشبوه</h2>
-    <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
-
-    <div class="input-card">
-      <div class="input-label">الصق الرابط هنا</div>
-
-      <!-- نفس الشكل: نص ثابت داخل المربع مثل الصورة -->
-      <div class="fake-input" id="linkBox">https://ishaarek.my.canva.site</div>
-    </div>
-
-    <button class="scan-btn" type="button" onclick="showSafe()">
-      <span class="scan-icon">⌕</span>
-      فحص الرابط الآن
-    </button>
-
-    <!-- النتيجة -->
-    <div id="resultSafe" class="result-card safe hidden">
-      <div class="result-icon">
-        <div class="ring"></div>
-        <div class="check">✓</div>
-      </div>
-
-      <h3 class="result-title">رابط آمن ✓</h3>
-      <p class="result-text">هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام</p>
-    </div>
-
-  </section>
-
-  <script src="app.js"></script>
-</body>
-</html>
-.result{
-  margin-top:20px;
-  padding:22px;
-  border-radius:18px;
-  text-align:center;
-  border:3px solid;
-}
-
-.result-icon{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.result.safe{
-  background:#eef8f1;
-  border-color:#4caf50;
-  color:#2e7d32;
-}
-
-.result.warning{
-  background:#fff8e1;
-  border-color:#ff9800;
-  color:#e65100;
-}
-
-.result.danger{
-  background:#fdecea;
-  border-color:#f44336;
-  color:#b71c1c;
-}
-
-.hidden{
-  display:none;
-}
-/* صفحة فحص الرابط */
-.center-page{
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.page-title{
-  font-size: 42px;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.page-desc{
-  font-size: 20px;
-  color: #6b6f73;
-  margin-bottom: 25px;
-}
-
-.link-box{
-  background: #f2f2f2;
-  border: 2px solid #d0d0d0;
-  border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: right;
-}
-
-.link-box label{
-  font-weight: 800;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.link-box input{
-  width: 100%;
-  padding: 14px;
-  font-size: 18px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  direction: ltr;
-}
-
-.scan-btn{
-  width: 100%;
-  background: #2f5f45;
-  color: #fff;
-  border: none;
-  border-radius: 16px;
-  padding: 16px;
-  font-size: 22px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.scan-btn:hover{
-  filter: brightness(0.95);
-}
-
-/* النتيجة */
-.result{
-  margin-top: 25px;
-  padding: 25px;
-  border-radius: 18px;
-  border: 3px solid #2f5f45;
-  background: #edf6ef;
-}
-
-.result .icon{
-  font-size: 50px;
-  color: #2f5f45;
-  margin-bottom: 10px;
-}
-
-.result h3{
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.result p{
-  font-size: 18px;
-  color: #6b6f73;
-  line-height: 1.8;
-}
-
-.hidden{
-  display: none;
-}
-/* textarea للذكاء */
-.text-area{
-  width: 100%;
-  min-height: 170px;
-  padding: 14px;
-  font-size: 18px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  line-height: 1.8;
-  direction: rtl;
-}
-
-/* زر العودة */
-.back-btn{
-  display: block;
-  margin-top: 16px;
-  padding: 16px;
-  border-radius: 16px;
-  border: 3px solid #2f5f45;
-  color: #2f5f45;
-  font-size: 22px;
-  font-weight: 900;
-  text-decoration: none;
-  background: #eef6f0;
-}
-
-.back-btn:hover{
-  filter: brightness(0.98);
-}
-.hidden { display: none; }
-
-.result{
-  margin-top: 18px;
-  border-radius: 18px;
-  padding: 22px;
-  border: 3px solid #cfd8d3;
-  background: #eef6f0;
-  text-align: center;
-}
-
-.result-icon{
-  width: 74px;
-  height: 74px;
-  margin: 0 auto 12px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 34px;
-  font-weight: 900;
-  border: 3px solid #2f5f45;
-  color: #2f5f45;
-  background: rgba(47,95,69,.08);
-}
-
-.result.safe{
-  border-color:#2f5f45;
-  background:#eef6f0;
-}
-
-.result.danger{
-  border-color:#b42318;
-  background:#fff0f0;
-}
-
-.result.danger .result-icon{
-  border-color:#b42318;
-  color:#b42318;
-  background: rgba(180,35,24,.08);
-}
-
-.result.warn{
-  border-color:#b26a00;
-  background:#fff7e6;
-}
-
-.result.warn .result-icon{
-  border-color:#b26a00;
-  color:#b26a00;
-  background: rgba(178,106,0,.08);
-}
-
-.result h3{
-  margin: 6px 0 10px;
-  font-size: 28px;
-  font-weight: 900;
-}
-
-.result p{
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.8;
-  opacity: .9;
-}
-.alerts {
-  max-width: 720px;
-  margin: auto;
-}
-
-.alert {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 18px;
-  padding: 18px;
-  margin-bottom: 14px;
-  background: #f7f7f7;
-  border: 3px solid transparent;
-}
-
-.alert h4 {
-  margin: 0 0 6px;
-}
-
-.alert span {
-  display: block;
-  font-size: 14px;
-  color: #666;
-}
-
-.alert-icon {
-  font-size: 26px;
-  font-weight: bold;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* الحالات */
-.alert.danger { border-color: #b94a48; }
-.alert.warning { border-color: #d6a04f; }
-.alert.info { border-color: #3a7c6a; }
-
-.tag {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 4px 10px;
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.tag.danger { background: #f3d6d6; color: #b94a48; }
-.tag.warning { background: #f6ead1; color: #a8741a; }
-.tag.info { background: #dceee9; color: #2f5f45; }
-.page{ padding: 26px 18px 40px; }
-
-.input-card{
-  background: var(--card);
-  border: 2px solid rgba(0,0,0,.08);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-}
-
-.input-label{
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #404040;
-}
-
-.url-box{
-  width: 100%;
-  min-height: 120px;
-  resize: vertical;
-  border-radius: 16px;
-  border: 2px solid rgba(0,0,0,.12);
-  padding: 14px;
-  font-size: 18px;
-  outline: none;
-  background: #fff;
-}
-
-.url-box:focus{
-  border-color: var(--border);
-  box-shadow: 0 0 0 4px rgba(47,95,69,.12);
-}
-
-.primary-btn{
-  width: 100%;
-  margin-top: 18px;
-  background: linear-gradient(0deg,var(--green),var(--green-2));
-  color: #fff;
-  border: 0;
-  border-radius: 18px;
-  padding: 18px 16px;
-  font-size: 22px;
-  font-weight: 900;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  box-shadow: 0 10px 24px rgba(47,95,69,.18);
-}
-
-.btn-icon{ font-size: 22px; opacity: .95; }
-
-.result-wrap{ margin-top: 18px; }
-
-.result-card{
-  background: #eef1ef;
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px;
-  display: flex;
-  align-items: center;
   gap: 14px;
+  cursor:pointer;
+  text-align:right;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
 }
 
-.result-icon{
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  display: grid; place-items: center;
-  font-size: 30px;
+.card:hover{ filter: brightness(.99); }
+
+.card:active{
+  transform: scale(0.995);
+}
+
+.card-active{
+  border-color: rgba(47,125,50,.55);
+  box-shadow: 0 0 0 3px rgba(47,125,50,.10), 0 2px 10px rgba(0,0,0,.05);
+}
+
+.arrow{
+  flex: 0 0 auto;
+  font-size: 22px;
+  color:#7b848d;
+  padding: 0 6px;
+}
+
+.text{
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+  min-width:0;
+  flex: 1 1 auto;
+}
+
+.title{
+  font-size: 24px;
   font-weight: 900;
-  border: 3px solid currentColor;
-  background: rgba(255,255,255,.45);
+  color:#5d646b;
 }
 
-.result-title{
+.sub{
+  font-size: 14px;
+  color:#8a9199;
+  line-height: 1.7;
+}
+
+.iconbox{
+  flex: 0 0 auto;
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  border: 2px solid rgba(47,125,50,.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: var(--green2);
+  background: rgba(47,125,50,.10);
   font-size: 26px;
-  font-weight: 900;
-  margin-bottom: 6px;
 }
 
-.result-desc{
-  font-size: 18px;
-  opacity: .9;
-  line-height: 1.8;
-}
-
-.result-card.safe{ color: #2f5f45; }
-.result-card.warn{ color: #b48a2d; border-color: rgba(180,138,45,.45); background:#f4f1e6; }
-.result-card.danger{ color: #9b2f2f; border-color: rgba(155,47,47,.45); background:#f6e7e7; }
-
-.back-btn{
+.back-main{
   display:block;
   margin-top: 18px;
+  padding: 14px 16px;
   text-align:center;
-  background:#dfe6e1;
+  border-radius: 14px;
+  border: 2px solid rgba(47,125,50,.55);
+  color: var(--green2);
+  text-decoration:none;
+  background: transparent;
+  font-weight: 800;
+}
+
+button.card{
   border: 2px solid var(--border);
-  border-radius: 18px;
-  padding: 18px 16px;
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--green-2);
-  text-decoration: none;
-}
-report-card {
-  display: block;
-  cursor: pointer;
-}
-
-.report-card * {
-  pointer-events: none;
-}
-
-.report-card {
-  pointer-events: auto;
-}
-/* يخلي الكرت ينضغط بدون تغيير شكله */
-.service-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-/* يمنع العناصر الداخلية من تعطيل الضغط */
-.service-card * {
-  pointer-events: none;
-}
-.service-card {
-  pointer-events: auto;
+  outline: none;
 }
