@@ -1,7 +1,49 @@
 :root{
   --green:#1f6b45;
-  --bg:#f6f7f6;
 }
+
+body{
+  font-family: system-ui;
+  background:#f4f6f4;
+  margin:0;
+  padding:20px;
+}
+
+.page{display:none}
+.page.active{display:block}
+
+.actions{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.action-card{
+  background:#fff;
+  border:0;
+  border-radius:16px;
+  padding:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  transition:.15s;
+}
+
+.action-card:hover{transform:translateY(-2px)}
+.action-card:active{transform:scale(.98)}
+
+.action-left{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+
+.arrow{color:var(--green)}
+
+.title{font-weight:bold}
+.desc{font-size:14px;color:#555}
 
 .icon-box{
   width:58px;
@@ -10,21 +52,21 @@
   border-radius:14px;
   display:grid;
   place-items:center;
-  background:#fff;
-  box-shadow: 0 6px 14px rgba(0,0,0,.06);
-  flex: 0 0 auto;
 }
 
 .icon{
   width:26px;
   height:26px;
-  stroke: var(--green);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  stroke:var(--green);
+  fill:none;
+  stroke-width:2;
 }
 
-/* تفاعل بسيط */
-.action-card:hover .icon-box{ transform: translateY(-1px); }
-.action-card:active .icon-box{ transform: scale(.98); }
+.back-btn{
+  margin-bottom:20px;
+  border:1px solid var(--green);
+  background:none;
+  padding:8px 14px;
+  border-radius:10px;
+  cursor:pointer;
+}
