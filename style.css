@@ -12,12 +12,12 @@ body{
 .page{display:none}
 .page.active{display:block}
 
-.actions{
+..action-left{
   display:flex;
-  flex-direction:column;
-  gap:16px;
+  align-items:center;
+  gap:14px;
+  flex:1;
 }
-
 .action-card{
   background:#f2f3f2;
   border:0;
@@ -71,4 +71,38 @@ body{
   padding:8px 14px;
   border-radius:10px;
   cursor:pointer;
+}
+.arrow{
+  color:#6b7c74;
+  font-size:18px;
+  flex:0 0 auto;
+}
+.text{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.title{
+  font-weight:700;
+  color:#1f1f1f;
+}
+
+.desc{
+  font-size:14px;
+  color:#6b6b6b;
+}
+.icon-box{
+  width:56px;
+  height:56px;
+  border:2px solid #1f6b45;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  flex:0 0 auto;
+}
+.icon-box svg{
+  max-width:26px;
+  max-height:26px;
 }
