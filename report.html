@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>رفع بلاغ</title>
-    <script src="app.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>رفع بلاغ احتيال</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-    <div class="menu-icon" onclick="go('index.html')">←</div>
-    <div class="logo"><img src="icons/shield.svg" class="shield"> رفع بلاغ</div>
-    <div></div>
-</header>
+  <!-- العنوان -->
+  <section class="report-page">
+    <h1 class="page-title">رفع بلاغ احتيال</h1>
+    <p class="page-subtitle">
+      اختر نوع الاحتيال وستظهر الخانات المناسبة تلقائيًا
+    </p>
 
-<div class="card">
-    <label>رقم / رابط / رسالة مشبوهة:</label>
-    <input id="number" class="input">
+    <!-- شبكة الخيارات -->
+    <div class="report-grid">
 
-    <label>تفاصيل إضافية:</label>
-    <textarea id="details" class="textarea"></textarea>
+      <div class="report-card">
+        <img src="assets/icons/phone.svg" alt="">
+        <span>مكالمة تهديد</span>
+      </div>
 
-    <button class="btn" onclick="saveReport()">إرسال البلاغ</button>
-</div>
+      <div class="report-card">
+        <img src="assets/icons/message.svg" alt="">
+        <span>رسالة نصية مشبوهة</span>
+      </div>
 
-<div class="card" style="margin-top:20px;">
-    <h3>سجل البلاغات</h3>
-    <div id="report-list"></div>
-</div>
+      <div class="report-card active">
+        <img src="assets/icons/mobile.svg" alt="">
+        <span>رقم هاتف مشبوه</span>
+      </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', displayReports);
-</script>
+      <div class="report-card">
+        <img src="assets/icons/link.svg" alt="">
+        <span>رابط أو موقع مزيف</span>
+      </div>
+
+      <div class="report-card">
+        <img src="assets/icons/card.svg" alt="">
+        <span>طلب بيانات أو تحويل</span>
+      </div>
+
+      <div class="report-card">
+        <img src="assets/icons/user.svg" alt="">
+        <span>حساب ينتحل جهة حكومية</span>
+      </div>
+
+    </div>
+
+    <!-- زر العودة -->
+    <a href="index.html" class="back-btn">العودة إلى إشعارك</a>
+  </section>
 
 </body>
 </html>
