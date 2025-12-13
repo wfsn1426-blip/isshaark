@@ -1,69 +1,118 @@
-<div class="grid">
+<!-- ====== القائمة الرئيسية ====== -->
+<section id="home" class="page active">
+  <div class="actions">
 
-  <div class="card" onclick="go('report.html')">
-    <span class="arrow">←</span>
-    <div class="card-text">
-      <h3>رفع بلاغ</h3>
-      <p>أبلغ عن رقم، رسالة، مكالمة أو رابط مشبوه ليتم تحليله فورًا</p>
-    </div>
-    <div class="icon-box">
-      <img class="icon-img" src="assets/icons/warning.svg" alt="">
-    </div>
-  </div>
-  <div class="logo"إشعارك  <div/>
-  <div class="card" onclick="go('check.html')">
-    <span class="arrow">←</span>
-    <div class="card-text">
-      <h3>فحص رابط</h3>
-      <p>أدخل أي رابط ليتم فحصه بواسطة الذكاء الاصطناعي وتحديد مستوى الخطورة</p>
-    </div>
-    <div class="icon-box">
-      <img class="icon-img" src="assets/icons/check.svg" alt="">
-    </div>
-  </div>
+    <button class="action-card" data-target="report" type="button">
+      <div class="action-left">
+        <span class="arrow">←</span>
+        <div class="text">
+          <div class="title">رفع بلاغ</div>
+          <div class="desc">أبلغ عن رقم، رسالة، مكالمة أو رابط مشبوه يتم تحليله فوراً</div>
+        </div>
+      </div>
+      <div class="icon-box">… ايقونتك SVG …</div>
+    </button>
 
-  <div class="card" onclick="go('ai.html')">
-    <span class="arrow">←</span>
-    <div class="card-text">
-      <h3>التحليل الذكي</h3>
-      <p>حلّل الرسائل أو النصوص المشبوهة باستخدام الذكاء الاصطناعي لاكتشاف أنماط الاحتيال</p>
-    </div>
-    <div class="icon-box">
-      <img class="icon-img" src="assets/icons/ai.svg" alt="">
-    </div>
-  </div>
+    <button class="action-card" data-target="linkcheck" type="button">
+      <div class="action-left">
+        <span class="arrow">←</span>
+        <div class="text">
+          <div class="title">فحص رابط</div>
+          <div class="desc">أدخل أي رابط يتم فحصه وتحديد مستوى الخطورة</div>
+        </div>
+      </div>
+      <div class="icon-box">…</div>
+    </button>
 
-  <div class="card active" onclick="go('alerts.html')">
-    <span class="arrow">←</span>
-    <div class="card-text">
-      <h3>تنبيهات الاحتيال</h3>
-      <p>اطلع على التحذيرات العامة الصادرة من وزارة الداخلية</p>
-    </div>
-    <div class="icon-box">
-      <img class="icon-img" src="assets/icons/bell.svg" alt="">
-    </div>
-  </div>
+    <button class="action-card" data-target="ai" type="button">
+      <div class="action-left">
+        <span class="arrow">←</span>
+        <div class="text">
+          <div class="title">التحليل الذكي</div>
+          <div class="desc">حلّل الرسائل أو النصوص المشبوهة بالذكاء الاصطناعي</div>
+        </div>
+      </div>
+      <div class="icon-box">…</div>
+    </button>
 
-  <div class="card" onclick="go('history.html')">
-    <span class="arrow">←</span>
-    <div class="card-text">
-      <h3>سجل البلاغات</h3>
-      <p>استعرض جميع بلاغاتك السابقة ونتائج التحقق</p>
-    </div>
-    <div class="icon-box">
-      <img class="icon-img" src="assets/icons/history.svg" alt="">
-    </div>
-  </div>
+    <button class="action-card" data-target="alerts" type="button">
+      <div class="action-left">
+        <span class="arrow">←</span>
+        <div class="text">
+          <div class="title">تنبيهات الاحتيال</div>
+          <div class="desc">اطلع على التحذيرات العامة</div>
+        </div>
+      </div>
+      <div class="icon-box">…</div>
+    </button>
 
-  <div class="card" onclick="go('settings.html')">
-    <span class="arrow">←</span>
-    <div class="card-text">
-      <h3>إدارة الإشعارات</h3>
-      <p>فعّل أو أوقف تنبيهات الاحتيال وحدد قناة الإشعار المناسبة لك</p>
-    </div>
-    <div class="icon-box">
-      <img class="icon-img" src="assets/icons/settings.svg" alt="">
-    </div>
-  </div>
+    <button class="action-card" data-target="history" type="button">
+      <div class="action-left">
+        <span class="arrow">←</span>
+        <div class="text">
+          <div class="title">سجل البلاغات</div>
+          <div class="desc">استعرض بلاغاتك السابقة</div>
+        </div>
+      </div>
+      <div class="icon-box">…</div>
+    </button>
 
-</div>
+    <button class="action-card" data-target="settings" type="button">
+      <div class="action-left">
+        <span class="arrow">←</span>
+        <div class="text">
+          <div class="title">إدارة الإشعارات</div>
+          <div class="desc">تفعيل/إيقاف التنبيهات وتحديد القناة</div>
+        </div>
+      </div>
+      <div class="icon-box">…</div>
+    </button>
+
+  </div>
+</section>
+
+<!-- ====== صفحات داخلية (تفتح عند الضغط) ====== -->
+<section id="report" class="page">
+  <div class="page-head">
+    <button class="back-btn" type="button">العودة</button>
+    <h2>رفع بلاغ</h2>
+  </div>
+  <p>هنا تضعين نموذج البلاغ…</p>
+</section>
+
+<section id="linkcheck" class="page">
+  <div class="page-head">
+    <button class="back-btn" type="button">العودة</button>
+    <h2>فحص رابط</h2>
+  </div>
+  <p>هنا تضعين فحص الرابط…</p>
+</section>
+
+<section id="ai" class="page">
+  <div class="page-head">
+    <button class="back-btn" type="button">العودة</button>
+    <h2>التحليل الذكي</h2>
+  </div>
+  <p>هنا تضعين التحليل…</p>
+</section>
+
+<section id="alerts" class="page">
+  <div class="page-head">
+    <button class="back-btn" type="button">العودة</button>
+    <h2>تنبيهات الاحتيال</h2>
+  </div>
+</section>
+
+<section id="history" class="page">
+  <div class="page-head">
+    <button class="back-btn" type="button">العودة</button>
+    <h2>سجل البلاغات</h2>
+  </div>
+</section>
+
+<section id="settings" class="page">
+  <div class="page-head">
+    <button class="back-btn" type="button">العودة</button>
+    <h2>إدارة الإشعارات</h2>
+  </div>
+</section>
