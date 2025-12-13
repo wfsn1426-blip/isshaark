@@ -796,3 +796,18 @@ report-card {
 .report-card {
   pointer-events: auto;
 }
+/* يخلي الكرت ينضغط بدون تغيير شكله */
+.service-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* يمنع العناصر الداخلية من تعطيل الضغط */
+.service-card * {
+  pointer-events: none;
+}
+.service-card {
+  pointer-events: auto;
+}
