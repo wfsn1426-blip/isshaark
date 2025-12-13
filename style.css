@@ -187,3 +187,21 @@ body{
   .box p{font-size:20px;}
   .icon-img{width:62px;height:62px;padding:12px;}
 }
+/* صندوق الأيقونة */
+.icon-img{
+  width:72px;
+  height:72px;
+  padding:14px;
+  border-radius:16px;
+  background:#eef1ef;
+  border:2px solid #6f8f7d;   /* الأخضر */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* لو كانت SVG داخل img */
+.icon-img{
+  object-fit: contain;
+  filter: none;
+}
