@@ -1,53 +1,186 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>تنبيهات الاحتيال</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root{
+      --green:#2f6f5e;
+      --light:#f6f7f6;
+      --border:#e2e4e1;
+      --danger:#d9534f;
+      --warning:#f0ad4e;
+      --text:#3a3a3a;
+    }
+
+    *{box-sizing:border-box;font-family:"Segoe UI",Tahoma;}
+    body{
+      margin:0;
+      background:#fafafa;
+      color:var(--text);
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:30px 16px;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:6px;
+    }
+    .subtitle{
+      text-align:center;
+      color:#777;
+      margin-bottom:30px;
+    }
+
+    .alert-card{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px 20px;
+      margin-bottom:16px;
+      transition:.2s;
+    }
+
+    .alert-card:hover{
+      box-shadow:0 4px 14px rgba(0,0,0,.06);
+    }
+
+    .alert-info{
+      max-width:70%;
+    }
+
+    .alert-title{
+      font-size:16px;
+      margin-bottom:6px;
+      font-weight:600;
+    }
+
+    .alert-meta{
+      font-size:13px;
+      color:#777;
+    }
+
+    .badge{
+      display:inline-block;
+      margin-top:6px;
+      padding:4px 10px;
+      border-radius:20px;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    .high{
+      background:#fdecea;
+      color:var(--danger);
+    }
+
+    .medium{
+      background:#fff4e5;
+      color:var(--warning);
+    }
+
+    .icon{
+      width:46px;
+      height:46px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .icon-danger{
+      background:#fdecea;
+      color:var(--danger);
+    }
+
+    .icon-warning{
+      background:#fff4e5;
+      color:var(--warning);
+    }
+
+    .back{
+      margin-top:30px;
+      text-align:center;
+    }
+
+    .back a{
+      display:inline-block;
+      padding:12px 26px;
+      border:2px solid var(--green);
+      color:var(--green);
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .back a:hover{
+      background:var(--green);
+      color:#fff;
+    }
+  </style>
 </head>
+
 <body>
-
-<section class="alerts">
-
-  <div class="alert danger">
-    <div class="alert-text">
-      <h4>حملة تصيّد باسم البنوك السعودية</h4>
-      <span>منذ ساعتين</span>
-      <span class="tag danger">خطر عالي</span>
+  <div class="container">
+    <h1>تنبيهات الاحتيال</h1>
+    <div class="subtitle">
+      أحدث التحذيرات الصادرة من الجهات المختصة
     </div>
-    <div class="alert-icon">!</div>
-  </div>
 
-  <div class="alert warning">
-    <div class="alert-text">
-      <h4>رسائل مزيفة باسم أرامكو</h4>
-      <span>منذ 5 ساعات</span>
-      <span class="tag warning">تحذير متوسط</span>
+    <!-- تنبيه 1 -->
+    <div class="alert-card">
+      <div class="alert-info">
+        <div class="alert-title">حملة تصيد باسم البنوك السعودية</div>
+        <div class="alert-meta">منذ ساعتين</div>
+        <span class="badge high">خطر عالي</span>
+      </div>
+      <div class="icon icon-danger">!</div>
     </div>
-    <div class="alert-icon">⚠</div>
-  </div>
 
-  <div class="alert danger">
-    <div class="alert-text">
-      <h4>مواقع احتيالية تنتحل صفة أبشر</h4>
-      <span>منذ 8 ساعات</span>
-      <span class="tag danger">خطر عالي</span>
+    <!-- تنبيه 2 -->
+    <div class="alert-card">
+      <div class="alert-info">
+        <div class="alert-title">رسائل مزيفة باسم أرامكو</div>
+        <div class="alert-meta">منذ 5 ساعات</div>
+        <span class="badge medium">تحذير متوسط</span>
+      </div>
+      <div class="icon icon-warning">⚠</div>
     </div>
-    <div class="alert-icon">✖</div>
-  </div>
 
-  <div class="alert info">
-    <div class="alert-text">
-      <h4>تحديثات أمنية جديدة متاحة</h4>
-      <span>منذ يومين</span>
-      <span class="tag info">معلومة عامة</span>
+    <!-- تنبيه 3 -->
+    <div class="alert-card" style="border:2px solid var(--green);">
+      <div class="alert-info">
+        <div class="alert-title">مواقع احتيالية تنتحل صفة أبشر</div>
+        <div class="alert-meta">منذ 8 ساعات</div>
+        <span class="badge high">خطر عالي</span>
+      </div>
+      <div class="icon icon-danger">✖</div>
     </div>
-    <div class="alert-icon">i</div>
+
+    <!-- تنبيه 4 -->
+    <div class="alert-card">
+      <div class="alert-info">
+        <div class="alert-title">مكالمات تنتحل صفة هيئة الزكاة</div>
+        <div class="alert-meta">منذ يوم واحد</div>
+        <span class="badge medium">تحذير متوسط</span>
+      </div>
+      <div class="icon icon-warning">⚠</div>
+    </div>
+
+    <div class="back">
+      <a href="index.html">العودة إلى إشعارك</a>
+    </div>
   </div>
-
-  <a href="index.html" class="back-btn">العودة إلى إشعارك</a>
-
-</section>
-
 </body>
 </html>
