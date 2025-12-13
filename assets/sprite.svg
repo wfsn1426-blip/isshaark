@@ -1,1 +1,5 @@
-
+<div class="icon-box">
+  <svg class="icon">
+    <use href="assets/sprite.svg#icon-warning"></use>
+  </svg>
+</div>
