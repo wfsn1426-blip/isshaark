@@ -1,12 +1,12 @@
 :root{
   --green:#2f5f45;
-  --green2:#2a5641;
-  --bg:#f2f3f3;
-  --card:#e7e7e7;
+  --green2:#2b5640;
   --border:#6f8f7d;
+  --bg:#f3f4f4;
+  --card:#e9e9ea;
   --text:#2b2b2b;
-  --muted:#6a6f73;
-  --shadow: 0 10px 22px rgba(0,0,0,.10);
+  --muted:#6b6f73;
+  --radius:18px;
 }
 
 *{box-sizing:border-box}
@@ -16,15 +16,15 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  direction: rtl;
+  font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  direction:rtl;
 }
 
-/* ====== HEADER (الشريط الأخضر مثل الصورة) ====== */
+/* ================= HEADER ================= */
 .header{
   background: linear-gradient(0deg, var(--green), var(--green2));
   color:#fff;
-  padding: 18px 18px 26px;
+  padding: 18px 18px 22px;
   box-shadow: 0 2px 14px rgba(0,0,0,.12);
   display:flex;
   align-items:center;
@@ -32,139 +32,77 @@ body{
   gap:16px;
 }
 
-/* أيقونة القائمة */
-.menu-icon{
-  width:44px;
-  height:44px;
+.menu-icon,
+.profile-icon{
+  width:46px;
+  height:46px;
   display:grid;
   place-items:center;
-  border-radius: 999px;
+  border-radius:999px;
   background: rgba(255,255,255,.12);
   border: 1px solid rgba(255,255,255,.18);
   font-size:22px;
   line-height:1;
 }
 
-/* شعار الوسط (الأيقونة + النص) */
 .logo{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
   font-weight:800;
   font-size:34px;
   letter-spacing:.4px;
 }
 
-/* الأيقونة الصغيرة داخل الشعار */
-.shield{
-  width:34px;
-  height:34px;
-  opacity:.95;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,.18));
-}
-
-/* أيقونة الحساب */
-.profile-icon{
-  width:44px;
-  height:44px;
-  display:grid;
-  place-items:center;
-  border-radius:999px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.18);
-  font-size:20px;
-}
-
-/* ====== MAIN CONTENT ====== */
+/* ================= MAIN ================= */
 .main{
-  max-width: 980px;
-  margin: 0 auto;
+  max-width:980px;
+  margin:0 auto;
   padding: 18px 18px 42px;
 }
 
-/* أزرار كبار السن (خليتها صغيرة أعلى اليسار مثل أدوات) */
-.accessibility-buttons{
-  display:flex;
-  gap:10px;
-  justify-content:flex-start;
-  margin: 12px 0 16px;
-}
-.accessibility-buttons button{
-  border: 1px solid rgba(0,0,0,.12);
-  background:#fff;
-  border-radius: 10px;
-  padding: 8px 10px;
-  cursor:pointer;
-  font-weight:700;
-}
-
-/* عنوان الصفحة */
 .title{
-  margin: 8px 0 6px;
+  margin: 14px 0 8px;
   font-size: 38px;
   font-weight: 900;
   color:#2c2c2c;
 }
 
-/* الوصف تحت العنوان */
 .subtitle{
   margin: 0 0 24px;
-  color: var(--muted);
-  line-height: 1.9;
-  font-size: 18px;
-  max-width: 900px;
+  color:var(--muted);
+  line-height:1.9;
+  font-size:18px;
+  max-width: 920px;
 }
 
-/* ====== GRID (نخليها قائمة بطاقات مثل الصورة) ====== */
+/* ================= CARDS LIST ================= */
 .grid{
   display:flex;
   flex-direction:column;
   gap:18px;
 }
 
-/* كل بطاقة */
 .box{
   position:relative;
-  background: var(--card);
-  border: 2px solid rgba(0,0,0,.08);
-  border-radius: 18px;
+  background:var(--card);
+  border:2px solid rgba(0,0,0,.08);
+  border-radius: var(--radius);
   padding: 18px 18px;
+  padding-left: 64px; /* مساحة للسهم */
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:18px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
   cursor:pointer;
   user-select:none;
 }
 
-/* تأثير مرور */
 .box:hover{
   filter: brightness(.99);
   transform: translateY(-1px);
   transition: .15s ease;
 }
 
-/* النص داخل البطاقة (اسم الخدمة) */
-.box p{
-  margin:0;
-  font-size: 26px;
-  font-weight: 800;
-  color:#2f2f2f;
-}
-
-/* أيقونة البطاقة (يمين) */
-.icon-img{
-  width:70px;
-  height:70px;
-  border-radius: 16px;
-  padding: 14px;
-  border: 2px solid var(--border);
-  background:#eef1ef;
-}
-
-/* سهم الرجوع (يسار البطاقة) - نسويه pseudo */
+/* سهم يسار البطاقة */
 .box::before{
   content:"←";
   position:absolute;
@@ -174,50 +112,38 @@ body{
   opacity:.9;
 }
 
-/* نخلي النص مو ملتصق بالسهم */
-.box{
-  padding-left: 64px;
+/* عنوان البطاقة */
+.box p{
+  margin:0;
+  font-size:26px;
+  font-weight:800;
+  color:#2f2f2f;
 }
 
-/* ====== Responsive ====== */
-@media (max-width: 700px){
-  .title{font-size: 28px;}
-  .subtitle{font-size:16px;}
-  .logo{font-size: 28px;}
-  .box p{font-size:20px;}
-  .icon-img{width:62px;height:62px;padding:12px;}
-}
-/* صندوق الأيقونة */
-.icon-img{
-  width:72px;
-  height:72px;
-  padding:14px;
-  border-radius:16px;
-  background:#eef1ef;
-  border:2px solid #6f8f7d;   /* الأخضر */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* لو كانت SVG داخل img */
-.icon-img{
-  object-fit: contain;
-  filter: none;
-}
+/* ================= ICON BOX + SVG ================= */
 .icon-box{
-  width:72px;
-  height:72px;
+  width:76px;
+  height:76px;
   border-radius:16px;
-  border:2px solid #6f8f7d;
+  border: 2px solid var(--border);
   background:#eef1ef;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:grid;
+  place-items:center;
+  flex: 0 0 auto;
 }
 
 .icon{
   width:34px;
   height:34px;
-  color:#2f5f45;
+  color: var(--green); /* يتحكم في لون الأيقونة */
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:640px){
+  .logo{font-size:28px;}
+  .title{font-size:28px;}
+  .subtitle{font-size:16px;}
+  .box p{font-size:20px;}
+  .icon-box{width:66px;height:66px;}
+  .icon{width:30px;height:30px;}
 }
