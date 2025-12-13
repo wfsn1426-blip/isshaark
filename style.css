@@ -1,47 +1,30 @@
-/* صفحات */
-.page { display: none; }
-.page.active { display: block; }
-
-/* الكرت تفاعلي */
-.action-card{
-  width: 100%;
-  border: 0;
-  background: #fff;
-  cursor: pointer;
-  text-align: right;
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  padding: 18px 16px;
-  border-radius: 14px;
-  box-shadow: 0 10px 22px rgba(0,0,0,.08);
-  transition: transform .12s ease, box-shadow .12s ease;
+:root{
+  --green:#1f6b45;
+  --bg:#f6f7f6;
 }
 
-.action-card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.12);
+.icon-box{
+  width:58px;
+  height:58px;
+  border:2px solid var(--green);
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+  flex: 0 0 auto;
 }
 
-.action-card:active{
-  transform: scale(.99);
+.icon{
+  width:26px;
+  height:26px;
+  stroke: var(--green);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-/* منع الـ SVG يعطل الضغط */
-.icon-box, .icon, .action-left, .text, .title, .desc { pointer-events: none; }
-
-.page-head{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.back-btn{
-  border: 1px solid #1f5f3a;
-  background: transparent;
-  padding: 10px 14px;
-  border-radius: 10px;
-  cursor: pointer;
-}
+/* تفاعل بسيط */
+.action-card:hover .icon-box{ transform: translateY(-1px); }
+.action-card:active .icon-box{ transform: scale(.98); }
