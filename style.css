@@ -176,3 +176,47 @@ button.card{
   justify-content: center;
 }
 </style>
+.result-box{
+  border-radius:14px;
+  padding:18px;
+  margin-top:18px;
+  text-align:center;
+}
+
+.result-icon{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  margin:0 auto 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+}
+
+.safe{
+  background:#e8f5ee;
+  border:2px solid #4caf7a;
+}
+.safe .result-icon{
+  border:3px solid #4caf7a;
+  color:#4caf7a;
+}
+
+.warning{
+  background:#fff6e8;
+  border:2px solid #e7b35a;
+}
+.warning .result-icon{
+  border:3px solid #e7b35a;
+  color:#e7b35a;
+}
+
+.danger{
+  background:#fdeaea;
+  border:2px solid #d9534f;
+}
+.danger .result-icon{
+  border:3px solid #d9534f;
+  color:#d9534f;
+}
