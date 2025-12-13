@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>فحص رابط</title>
+  <meta charset="UTF-8">
+  <title>التحليل الذكي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<section class="container ai-page">
+  <div class="container center-page">
 
-  <h2 class="page-title">فحص رابط مشبوه</h2>
-  <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
+    <h1 class="page-title">التحليل الذكي</h1>
+    <p class="page-desc">
+      تحليل فوري للكلمات والنمط والسياق لاكتشاف الاحتيال
+    </p>
 
-  <div class="input-box">
-    <div class="label">الصق الرابط هنا</div>
-    <textarea id="linkInput" placeholder="https://example.com"></textarea>
+    <!-- مربع الإدخال -->
+    <div class="link-box">
+      <label>أدخل النص المشبوه</label>
+      <textarea
+        id="textInput"
+        class="text-area"
+        placeholder="مثال: عزيزي العميل، تم إيقاف حسابك البنكي... الرجاء النقر على الرابط لتحديث بياناتك..."
+      ></textarea>
+    </div>
+
+    <!-- زر التحليل -->
+    <button class="scan-btn" onclick="analyzeText()">
+      🧠 تحليل النص
+    </button>
+
+    <!-- النتيجة -->
+    <div id="aiResult" class="result safe hidden">
+      <div class="icon">✓</div>
+      <h3>نص آمن ✓</h3>
+      <p>
+        لم نرصد مؤشرات احتيال واضحة في النص المدخل.
+      </p>
+    </div>
+
+    <!-- العودة -->
+    <a class="back-btn" href="index.html">العودة إلى إشعارك</a>
+
   </div>
 
-  <button class="primary-btn" onclick="checkLink()">فحص الرابط الآن</button>
-
-  <!-- النتيجة -->
-  <div id="resultBox" class="result hidden">
-    <div id="resultIcon" class="result-icon"></div>
-    <h3 id="resultTitle"></h3>
-    <p id="resultDesc"></p>
-  </div>
-
-  <a class="secondary-btn" href="index.html">العودة إلى إشعارك</a>
-
-</section>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
