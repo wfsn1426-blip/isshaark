@@ -5,72 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>إشعارك</title>
 
-  <!-- خط -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- JS -->
   <script src="app.js" defer></script>
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="header">
   <div class="menu-icon">☰</div>
   <div class="logo">أبشر</div>
   <div class="profile-icon">👤</div>
 </header>
 
-<!-- ================= SVG ICONS (INLINE) ================= -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-
-  <symbol id="icon-warning" viewBox="0 0 24 24">
-    <path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path d="M10.3 3.8l-8 14A2 2 0 004 21h16a2 2 0 001.7-3.2l-8-14a2 2 0 00-3.4 0z"
-          stroke="currentColor" stroke-width="2" fill="none"/>
-  </symbol>
-
-  <symbol id="icon-shield" viewBox="0 0 24 24">
-    <path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z"
-          stroke="currentColor" stroke-width="2" fill="none"/>
-  </symbol>
-
-  <symbol id="icon-ai" viewBox="0 0 24 24">
-    <rect x="4" y="4" width="16" height="16" rx="4"
-          stroke="currentColor" stroke-width="2" fill="none"/>
-    <circle cx="9" cy="10" r="1" fill="currentColor"/>
-    <circle cx="15" cy="10" r="1" fill="currentColor"/>
-    <path d="M9 15c1.5 1 4.5 1 6 0"
-          stroke="currentColor" stroke-width="2" fill="none"/>
-  </symbol>
-
-  <symbol id="icon-bell" viewBox="0 0 24 24">
-    <path d="M6 17h12l-1.5-2v-4a4.5 4.5 0 00-9 0v4L6 17z"
-          stroke="currentColor" stroke-width="2" fill="none"/>
-    <path d="M10 19a2 2 0 004 0"
-          stroke="currentColor" stroke-width="2" fill="none"/>
-  </symbol>
-
-  <symbol id="icon-file" viewBox="0 0 24 24">
-    <rect x="5" y="3" width="14" height="18" rx="2"
-          stroke="currentColor" stroke-width="2" fill="none"/>
-    <path d="M8 8h8M8 12h8M8 16h5"
-          stroke="currentColor" stroke-width="2" fill="none"/>
-  </symbol>
-
-  <symbol id="icon-settings" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="3"
-            stroke="currentColor" stroke-width="2" fill="none"/>
-    <path d="M19 12l2-1-2-1-.5-2-2-.5-1-2-1 2-2 .5-.5 2-2 1 2 1 .5 2 2 .5 1 2 1-2 2-.5z"
-          stroke="currentColor" stroke-width="1.5" fill="none"/>
-  </symbol>
-
-</svg>
-<!-- ================= /SVG ================= -->
-
-<!-- ================= MAIN ================= -->
 <section class="main">
 
   <h2 class="title">إشعارات – نظام الإنذار المبكر ضد الاحتيال</h2>
@@ -83,50 +29,84 @@
 
   <div class="grid">
 
+    <!-- رفع بلاغ -->
     <div class="box" onclick="go('report.html')">
       <div class="icon-box">
-        <svg class="icon"><use href="#icon-warning"></use></svg>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M10.3 3.8l-8 14A2 2 0 004 21h16a2 2 0 001.7-3.2l-8-14a2 2 0 00-3.4 0z"
+                stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+        </svg>
       </div>
       <p>رفع بلاغ</p>
     </div>
 
+    <!-- فحص رابط -->
     <div class="box" onclick="go('check.html')">
       <div class="icon-box">
-        <svg class="icon"><use href="#icon-shield"></use></svg>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z"
+                stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+        </svg>
       </div>
       <p>فحص رابط</p>
     </div>
 
+    <!-- التحليل الذكي -->
     <div class="box" onclick="go('ai.html')">
       <div class="icon-box">
-        <svg class="icon"><use href="#icon-ai"></use></svg>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="4"
+                stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="9" cy="10" r="1.2" fill="currentColor"/>
+          <circle cx="15" cy="10" r="1.2" fill="currentColor"/>
+          <path d="M9 15c1.5 1 4.5 1 6 0"
+                stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
       </div>
       <p>التحليل الذكي</p>
     </div>
 
+    <!-- تنبيهات الاحتيال -->
     <div class="box" onclick="go('alerts.html')">
       <div class="icon-box">
-        <svg class="icon"><use href="#icon-bell"></use></svg>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 17h12l-1.5-2v-4a4.5 4.5 0 00-9 0v4L6 17z"
+                stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+          <path d="M10 19a2 2 0 004 0"
+                stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
       </div>
       <p>تنبيهات الاحتيال</p>
     </div>
 
+    <!-- سجل البلاغات -->
     <div class="box" onclick="go('history.html')">
       <div class="icon-box">
-        <svg class="icon"><use href="#icon-file"></use></svg>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="5" y="3" width="14" height="18" rx="2"
+                stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M8 8h8M8 12h8M8 16h5"
+                stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
       </div>
       <p>سجل البلاغات</p>
     </div>
 
+    <!-- إدارة الإشعارات -->
     <div class="box" onclick="go('settings.html')">
       <div class="icon-box">
-        <svg class="icon"><use href="#icon-settings"></use></svg>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"
+                  stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M19 12l2-1-2-1-.5-2-2-.5-1-2-1 2-2 .5-.5 2-2 1 2 1 .5 2 2 .5 1 2 1-2 2-.5z"
+                stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        </svg>
       </div>
       <p>إدارة الإشعارات</p>
     </div>
 
   </div>
-
 </section>
 
 </body>
