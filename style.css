@@ -409,3 +409,37 @@ body{
   <script src="app.js"></script>
 </body>
 </html>
+.result{
+  margin-top:20px;
+  padding:22px;
+  border-radius:18px;
+  text-align:center;
+  border:3px solid;
+}
+
+.result-icon{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.result.safe{
+  background:#eef8f1;
+  border-color:#4caf50;
+  color:#2e7d32;
+}
+
+.result.warning{
+  background:#fff8e1;
+  border-color:#ff9800;
+  color:#e65100;
+}
+
+.result.danger{
+  background:#fdecea;
+  border-color:#f44336;
+  color:#b71c1c;
+}
+
+.hidden{
+  display:none;
+}
