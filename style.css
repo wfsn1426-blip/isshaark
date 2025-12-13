@@ -667,3 +667,22 @@ button{
 }
 
 .hidden{ display:none; }
+/* أيقونات SVG لا تتضخم */
+img, svg{
+  max-width: 100%;
+  height: auto;
+}
+
+/* لو الأيقونة داخل مربع الأيقونة (مثل iconbox) */
+.iconbox img,
+.iconbox svg{
+  width: 34px !important;
+  height: 34px !important;
+}
+
+/* لو النتيجة في صفحة الفحص */
+.result-icon img,
+.result-icon svg{
+  width: 30px !important;
+  height: 30px !important;
+}
