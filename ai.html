@@ -1,50 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>التحليل الذكي</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container center-page">
+<section class="container ai-page">
 
-    <h1 class="page-title">التحليل الذكي</h1>
-    <p class="page-desc">
-      تحليل فوري للكلمات والنمط والسياق لاكتشاف الاحتيال
-    </p>
+  <h2 class="page-title">التحليل الذكي</h2>
+  <p class="page-desc">تحليل فوري للكلمات والنمط والسياق لاكتشاف الاحتيال</p>
 
-    <!-- مربع الإدخال -->
-    <div class="link-box">
-      <label>أدخل النص المشبوه</label>
-      <textarea
-        id="textInput"
-        class="text-area"
-        placeholder="مثال: عزيزي العميل، تم إيقاف حسابك البنكي... الرجاء النقر على الرابط لتحديث بياناتك..."
-      ></textarea>
-    </div>
+  <div class="input-box">
+    <div class="label">أدخل النص المشبوه</div>
+    <div class="example">مثال:</div>
 
-    <!-- زر التحليل -->
-    <button class="scan-btn" onclick="analyzeText()">
-      🧠 تحليل النص
-    </button>
-
-    <!-- النتيجة -->
-    <div id="aiResult" class="result safe hidden">
-      <div class="icon">✓</div>
-      <h3>نص آمن ✓</h3>
-      <p>
-        لم نرصد مؤشرات احتيال واضحة في النص المدخل.
-      </p>
-    </div>
-
-    <!-- العودة -->
-    <a class="back-btn" href="index.html">العودة إلى إشعارك</a>
-
+    <textarea id="aiText" placeholder="عزيزي العميل، تم إيقاف حسابك البنكي..."></textarea>
   </div>
 
-  <script src="app.js"></script>
+  <!-- زر فقط (بدون تحليل) -->
+  <button class="primary-btn" type="button">
+    تحليل النص <span class="mini-icon">▣</span>
+  </button>
+
+  <a class="secondary-btn" href="index.html">العودة إلى إشعارك</a>
+
+</section>
+
 </body>
 </html>
