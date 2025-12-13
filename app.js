@@ -9,36 +9,43 @@ window.go = function (page) {
    فحص الرابط
 ================================ */
 function checkLink(){
-  const link = document.getElementById("linkInput").value.toLowerCase();
-  const result = document.getElementById("result");
-  const icon = document.getElementById("resultIcon");
+  const link = document.getElementById("linkInput").value.trim();
+  const box = document.getElementById("resultBox");
   const title = document.getElementById("resultTitle");
-  const text = document.getElementById("resultText");
+  const desc = document.getElementById("resultDesc");
+  const icon = document.getElementById("resultIcon");
 
-  result.className = "result"; // reset
-  result.classList.remove("hidden");
+  box.className = "result"; // reset
+  box.classList.remove("hidden");
 
-  // منطق تجريبي
-  if(link.includes("bank") || link.includes("verify") || link.includes("login")){
-    result.classList.add("danger");
-    icon.innerHTML = "❌";
-    title.innerText = "رابط خطر – احتيال مؤكد";
-    text.innerText = "هذا الرابط مصنف كخطر عالي وقد يؤدي لسرقة بياناتك.";
+  if(link === ""){
+    title.textContent = "لم يتم إدخال رابط";
+    desc.textContent = "يرجى إدخال رابط لفحصه";
+    icon.textContent = "⚠️";
+    box.classList.add("warning");
+    return;
   }
-  else if(link.includes("canva") || link.includes("free") || link.includes("offer")){
-    result.classList.add("warning");
-    icon.innerHTML = "⚠️";
-    title.innerText = "رابط مزيف محتمل";
-    text.innerText = "الرابط يبدو مشبوهاً، ننصح بعدم إدخال أي بيانات.";
-  }
-  else{
-    result.classList.add("safe");
-    icon.innerHTML = "✔️";
-    title.innerText = "رابط آمن";
-    text.innerText = "هذا الرابط لم يتم الإبلاغ عنه ويبدو آمناً للاستخدام.";
+
+  // منطق تجريبي (Demo)
+  if(link.includes("bank") || link.includes("verify")){
+    title.textContent = "احتيال مؤكد";
+    desc.textContent = "تم رصد هذا الرابط كتهديد خطير ويُنصح بعدم فتحه.";
+    icon.textContent = "❌";
+    box.classList.add("danger");
+
+  }else if(link.includes("http")){
+    title.textContent = "رابط مزيف محتمل";
+    desc.textContent = "لم يتم التأكد من موثوقية الرابط بالكامل، يرجى الحذر.";
+    icon.textContent = "⚠️";
+    box.classList.add("warning");
+
+  }else{
+    title.textContent = "رابط آمن";
+    desc.textContent = "لم يتم تسجيل أي بلاغات على هذا الرابط حتى الآن.";
+    icon.textContent = "✅";
+    box.classList.add("safe");
   }
 }
-
 function checkURL() {
   let url = document.getElementById("urlInput").value;
   let result = document.getElementById("urlResult");
