@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>التحليل الذكي</title>
-    <script src="app.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>فحص رابط</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="menu-icon" onclick="go('index.html')">←</div>
-    <div class="logo"><img src="icons/shield.svg" class="shield"> التحليل الذكي</div>
-    <div></div>
-</header>
+<section class="container ai-page">
 
-<div class="card">
-    <label>أدخل الرسالة لتحليلها:</label>
-    <textarea id="aiText" class="textarea"></textarea>
+  <h2 class="page-title">فحص رابط مشبوه</h2>
+  <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
 
-    <button class="btn" onclick="analyzeText()">تحليل</button>
-    <button class="btn" id="startVoiceBtn">🎤 بدء الصوت</button>
+  <div class="input-box">
+    <div class="label">الصق الرابط هنا</div>
+    <textarea id="linkInput" placeholder="https://example.com"></textarea>
+  </div>
 
-    <p id="aiResult" style="margin-top:20px; font-size:18px;"></p>
-</div>
+  <button class="primary-btn" onclick="checkLink()">فحص الرابط الآن</button>
 
-<div class="card">
-    <h3>الدردشة الصوتية / النصية</h3>
-    <textarea id="chat-input" class="textarea" placeholder="اكتب هنا"></textarea>
-    <button class="btn" onclick="sendChat()">إرسال</button>
-    <div id="chat-output" style="margin-top:10px;"></div>
-</div>
+  <!-- النتيجة -->
+  <div id="resultBox" class="result hidden">
+    <div id="resultIcon" class="result-icon"></div>
+    <h3 id="resultTitle"></h3>
+    <p id="resultDesc"></p>
+  </div>
 
+  <a class="secondary-btn" href="index.html">العودة إلى إشعارك</a>
+
+</section>
+
+<script src="app.js"></script>
 </body>
 </html>
