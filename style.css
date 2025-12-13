@@ -1,59 +1,99 @@
 :root{
   --green:#1f6b45;
+  --card:#eef0ee;
+  --text:#1f1f1f;
+  --muted:#6b6b6b;
 }
 
 body{
-  font-family: system-ui;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial;
   background:#f4f6f4;
   margin:0;
-  padding:20px;
+  padding:22px;
 }
 
 .page{display:none}
 .page.active{display:block}
 
-..action-left{
+.actions{
   display:flex;
-  align-items:center;
-  gap:14px;
-  flex:1;
+  flex-direction:column;
+  gap:16px;
 }
+
+/* ✅ الحل: Grid ثابت (سهم يسار + نص + أيقونة يمين) */
 .action-card{
-  background:#f2f3f2;
+  width:100%;
+  background:var(--card);
   border:0;
   border-radius:18px;
   padding:18px 20px;
-  display:flex;
-  flex-direction: row-reverse; /* 👈 هذا المهم */
-  align-items:center;
-  justify-content:space-between;
   cursor:pointer;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
-  transition:.15s;
-  min-height:88px;
+
+  display:grid;
+  grid-template-columns: 34px 1fr 74px; /* arrow | text | icon */
+  align-items:center;
+  column-gap:14px;
+
+  /* نخلي تخطيط الشبكة LTR عشان السهم يكون يسار فعلاً */
+  direction:ltr;
+
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+  transition: transform .12s ease;
+  min-height:90px;
 }
 
-.action-card:hover{transform:translateY(-2px)}
-.action-card:active{transform:scale(.98)}
+.action-card:hover{ transform: translateY(-2px); }
+.action-card:active{ transform: scale(.99); }
 
 .action-left{
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
+  /* نخلي اللي داخل العمود الأوسط RTL */
+  direction:rtl;
+  display:contents; /* مهم: يخلّي arrow/text ياخذون أعمدتهم */
 }
 
-.arrow{color:var(--green)}
+/* السهم في العمود الأول */
+.arrow{
+  grid-column:1;
+  justify-self:start;
+  color:#6b7c74;
+  font-size:18px;
+}
 
-.title{font-weight:bold}
-.desc{font-size:14px;color:#555}
+/* النص في العمود الثاني */
+.text{
+  grid-column:2;
+  text-align:right;
+  direction:rtl;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
 
+.title{
+  font-weight:700;
+  color:var(--text);
+  font-size:16px;
+}
+
+.desc{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* الأيقونة في العمود الثالث (يمين) */
 .icon-box{
-  width:58px;
-  height:58px;
+  grid-column:3;
+  justify-self:end;
+
+  width:56px;
+  height:56px;
   border:2px solid var(--green);
   border-radius:14px;
   display:grid;
   place-items:center;
+  background:#fff;
 }
 
 .icon{
@@ -62,47 +102,16 @@ body{
   stroke:var(--green);
   fill:none;
   stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
+/* زر الرجوع */
 .back-btn{
   margin-bottom:20px;
   border:1px solid var(--green);
-  background:none;
-  padding:8px 14px;
+  background:#fff;
+  padding:10px 14px;
   border-radius:10px;
   cursor:pointer;
-}
-.arrow{
-  color:#6b7c74;
-  font-size:18px;
-  flex:0 0 auto;
-}
-.text{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.title{
-  font-weight:700;
-  color:#1f1f1f;
-}
-
-.desc{
-  font-size:14px;
-  color:#6b6b6b;
-}
-.icon-box{
-  width:56px;
-  height:56px;
-  border:2px solid #1f6b45;
-  border-radius:14px;
-  display:grid;
-  place-items:center;
-  background:#fff;
-  flex:0 0 auto;
-}
-.icon-box svg{
-  max-width:26px;
-  max-height:26px;
 }
