@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>إشعارك</title>
 
-  <!-- خط عربي -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- خط -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
@@ -19,97 +19,11 @@
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="menu-icon">☰</div>
-
-  <div class="logo">
-    <span>أبشر</span>
-  </div>
-
+  <div class="logo">أبشر</div>
   <div class="profile-icon">👤</div>
 </header>
 
-<!-- ================= MAIN ================= -->
-<section class="main">
-
-  <!-- العنوان -->
-  <h2 class="title">إشعارات – نظام الإنذار المبكر ضد الاحتيال</h2>
-
-  <!-- الوصف -->
-  <p class="subtitle">
-    خدمة وطنية داخل أبشر تساعدك على التحقق من الروابط والرسائل والأرقام المشبوهة
-    وإصدار تنبيهات فورية قبل وقوع الاحتيال، وتعتمد على قواعد بيانات أمنية
-    وذكاء اصطناعي متقدم.
-  </p>
-
-  <!-- ================= البطاقات ================= -->
-  <div class="grid">
-
-    <!-- رفع بلاغ -->
-    <div class="box" onclick="go('report.html')">
-      <div class="icon-box">
-        <svg class="icon">
-          <use href="assets/sprite.svg#icon-warning"></use>
-        </svg>
-      </div>
-      <p>رفع بلاغ</p>
-    </div>
-
-    <!-- فحص رابط -->
-    <div class="box" onclick="go('check.html')">
-      <div class="icon-box">
-        <svg class="icon">
-          <use href="assets/sprite.svg#icon-shield"></use>
-        </svg>
-      </div>
-      <p>فحص رابط</p>
-    </div>
-
-    <!-- التحليل الذكي -->
-    <div class="box" onclick="go('ai.html')">
-      <div class="icon-box">
-        <svg class="icon">
-          <use href="assets/sprite.svg#icon-ai"></use>
-        </svg>
-      </div>
-      <p>التحليل الذكي</p>
-    </div>
-
-    <!-- تنبيهات الاحتيال -->
-    <div class="box" onclick="go('alerts.html')">
-      <div class="icon-box">
-        <svg class="icon">
-          <use href="assets/sprite.svg#icon-bell"></use>
-        </svg>
-      </div>
-      <p>تنبيهات الاحتيال</p>
-    </div>
-
-    <!-- سجل البلاغات -->
-    <div class="box" onclick="go('history.html')">
-      <div class="icon-box">
-        <svg class="icon">
-          <use href="assets/sprite.svg#icon-file"></use>
-        </svg>
-      </div>
-      <p>سجل البلاغات</p>
-    </div>
-
-    <!-- إدارة الإشعارات -->
-    <div class="box" onclick="go('settings.html')">
-      <div class="icon-box">
-        <svg class="icon">
-          <use href="assets/sprite.svg#icon-settings"></use>
-        </svg>
-      </div>
-      <p>إدارة الإشعارات</p>
-    </div>
-
-  </div>
-
-</section>
-
-</body>
-</html>
-<!-- ===== SVG SPRITE (INLINE) ===== -->
+<!-- ================= SVG ICONS (INLINE) ================= -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
   <symbol id="icon-warning" viewBox="0 0 24 24">
@@ -154,4 +68,66 @@
   </symbol>
 
 </svg>
-<!-- ===== /SVG SPRITE ===== -->
+<!-- ================= /SVG ================= -->
+
+<!-- ================= MAIN ================= -->
+<section class="main">
+
+  <h2 class="title">إشعارات – نظام الإنذار المبكر ضد الاحتيال</h2>
+
+  <p class="subtitle">
+    خدمة وطنية داخل أبشر تساعدك على التحقق من الروابط والرسائل والأرقام المشبوهة
+    وإصدار تنبيهات فورية قبل وقوع الاحتيال، وتعتمد على قواعد بيانات أمنية
+    وذكاء اصطناعي متقدم.
+  </p>
+
+  <div class="grid">
+
+    <div class="box" onclick="go('report.html')">
+      <div class="icon-box">
+        <svg class="icon"><use href="#icon-warning"></use></svg>
+      </div>
+      <p>رفع بلاغ</p>
+    </div>
+
+    <div class="box" onclick="go('check.html')">
+      <div class="icon-box">
+        <svg class="icon"><use href="#icon-shield"></use></svg>
+      </div>
+      <p>فحص رابط</p>
+    </div>
+
+    <div class="box" onclick="go('ai.html')">
+      <div class="icon-box">
+        <svg class="icon"><use href="#icon-ai"></use></svg>
+      </div>
+      <p>التحليل الذكي</p>
+    </div>
+
+    <div class="box" onclick="go('alerts.html')">
+      <div class="icon-box">
+        <svg class="icon"><use href="#icon-bell"></use></svg>
+      </div>
+      <p>تنبيهات الاحتيال</p>
+    </div>
+
+    <div class="box" onclick="go('history.html')">
+      <div class="icon-box">
+        <svg class="icon"><use href="#icon-file"></use></svg>
+      </div>
+      <p>سجل البلاغات</p>
+    </div>
+
+    <div class="box" onclick="go('settings.html')">
+      <div class="icon-box">
+        <svg class="icon"><use href="#icon-settings"></use></svg>
+      </div>
+      <p>إدارة الإشعارات</p>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
