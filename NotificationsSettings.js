@@ -38,3 +38,5 @@ function NotificationsSettings({ goHome }) {
 }
 
 export default NotificationsSettings;
+import Toggle from "./components/Toggle";
+import Section from "./components/Section";
