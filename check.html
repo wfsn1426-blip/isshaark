@@ -1,45 +1,115 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>فحص رابط مشبوه</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <div class="container center-page">
+  <!-- الهيدر (مثل باقي الصفحات) -->
+  <div class="topbar">
+    <div class="container">
+      <div class="brand">
+        <span>أبشر</span>
+      </div>
 
+      <div class="right"></div>
+    </div>
+  </div>
+
+  <main class="container page">
     <h1 class="page-title">فحص رابط مشبوه</h1>
-    <p class="page-desc">
-      أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني
-    </p>
+    <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
 
     <!-- مربع الإدخال -->
-    <div class="link-box">
-      <label>الصق الرابط هنا</label>
-      <input
-        id="linkInput"
-        type="text"
-        placeholder="https://ishaarek.my.canva.site"
-      >
+    <div class="input-card">
+      <div class="input-label">الصق الرابط هنا</div>
+      <textarea id="urlInput" class="url-box" placeholder="مثال: https://example.com"></textarea>
     </div>
 
     <!-- زر الفحص -->
-    <button onclick="checkLink()">فحص الرابط الآن</button>
+    <button id="checkBtn" class="primary-btn">
+      <span class="btn-icon">🔍</span>
+      فحص الرابط الآن
     </button>
 
     <!-- النتيجة -->
-    <div id="result" class="result safe hidden">
-      <div class="icon">✓</div>
-      <h3>رابط آمن ✓</h3>
-      <p>
-        هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام
-      </p>
+    <div id="resultWrap" class="result-wrap" style="display:none;">
+      <div id="resultCard" class="result-card">
+        <div class="result-icon" id="resultIcon">✓</div>
+        <div class="result-text">
+          <div id="resultTitle" class="result-title">رابط آمن ✓</div>
+          <div id="resultDesc" class="result-desc">
+            هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام
+          </div>
+        </div>
+      </div>
     </div>
-<a class="back-btn" href="index.html">العودة إلى إشعارك</a>  </div>
 
-  <script src="check.js" defer></script>
+    <!-- زر الرجوع -->
+    <a class="back-btn" href="index.html">العودة إلى إشعارك</a>
+  </main>
+
+  <script>
+    function classifyUrl(raw) {
+      const url = (raw || "").trim();
+
+      // بدون أي شيء
+      if (!url) return { type: "warn", title: "رابط مزيف محتمل", desc: "لم يتم إدخال رابط. تأكد من لصق الرابط كاملًا." };
+
+      // https
+      if (url.startsWith("https://")) {
+        return {
+          type: "safe",
+          title: "رابط آمن ✓",
+          desc: "هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام"
+        };
+      }
+
+      // http
+      if (url.startsWith("http://")) {
+        return {
+          type: "danger",
+          title: "رابط خطر - احتيال مؤكد",
+          desc: "الرابط يستخدم HTTP غير آمن وقد يكون مرتبطًا بمحاولات احتيال. يُنصح بعدم فتحه."
+        };
+      }
+
+      // بدون بروتوكول
+      return {
+        type: "warn",
+        title: "رابط مزيف محتمل",
+        desc: "الرابط بدون https/http. قد يكون مختصرًا أو مكتوبًا بشكل غير صحيح. تحقق قبل الفتح."
+      };
+    }
+
+    const btn = document.getElementById("checkBtn");
+    const input = document.getElementById("urlInput");
+    const wrap = document.getElementById("resultWrap");
+    const card = document.getElementById("resultCard");
+    const icon = document.getElementById("resultIcon");
+    const title = document.getElementById("resultTitle");
+    const desc = document.getElementById("resultDesc");
+
+    btn.addEventListener("click", () => {
+      const r = classifyUrl(input.value);
+
+      wrap.style.display = "block";
+      card.classList.remove("safe","warn","danger");
+      card.classList.add(r.type);
+
+      if (r.type === "safe") icon.textContent = "✓";
+      if (r.type === "warn") icon.textContent = "!";
+      if (r.type === "danger") icon.textContent = "✕";
+
+      title.textContent = r.title;
+      desc.textContent = r.desc;
+    });
+  </script>
+
 </body>
 </html>
