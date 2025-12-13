@@ -200,3 +200,18 @@ body{
   .icon-box{width:66px;height:66px;}
   .icon-img{width:34px;height:34px;}
 }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.center-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+}
