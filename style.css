@@ -626,3 +626,57 @@ body{
   line-height: 1.8;
   opacity: .9;
 }
+.alerts {
+  max-width: 720px;
+  margin: auto;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 14px;
+  background: #f7f7f7;
+  border: 3px solid transparent;
+}
+
+.alert h4 {
+  margin: 0 0 6px;
+}
+
+.alert span {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+.alert-icon {
+  font-size: 26px;
+  font-weight: bold;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* الحالات */
+.alert.danger { border-color: #b94a48; }
+.alert.warning { border-color: #d6a04f; }
+.alert.info { border-color: #3a7c6a; }
+
+.tag {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.tag.danger { background: #f3d6d6; color: #b94a48; }
+.tag.warning { background: #f6ead1; color: #a8741a; }
+.tag.info { background: #dceee9; color: #2f5f45; }
