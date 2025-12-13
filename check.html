@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>فحص رابط</title>
+  <meta charset="UTF-8">
+  <title>فحص رابط مشبوه</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <section class="container check-page">
 
-    <h2 class="page-title">فحص رابط مشبوه</h2>
-    <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
+  <div class="container center-page">
 
-    <div class="input-card">
-      <div class="input-label">الصق الرابط هنا</div>
+    <h1 class="page-title">فحص رابط مشبوه</h1>
+    <p class="page-desc">
+      أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني
+    </p>
 
-      <!-- نفس الشكل: نص ثابت داخل المربع مثل الصورة -->
-      <div class="fake-input" id="linkBox">https://ishaarek.my.canva.site</div>
+    <!-- مربع الإدخال -->
+    <div class="link-box">
+      <label>الصق الرابط هنا</label>
+      <input
+        id="linkInput"
+        type="text"
+        placeholder="https://ishaarek.my.canva.site"
+      >
     </div>
 
-    <button class="scan-btn" type="button" onclick="showSafe()">
-      <span class="scan-icon">⌕</span>
-      فحص الرابط الآن
+    <!-- زر الفحص -->
+    <button class="scan-btn" onclick="checkLink()">
+      🔍 فحص الرابط الآن
     </button>
 
     <!-- النتيجة -->
-    <div id="resultSafe" class="result-card safe hidden">
-      <div class="result-icon">
-        <div class="ring"></div>
-        <div class="check">✓</div>
-      </div>
-
-      <h3 class="result-title">رابط آمن ✓</h3>
-      <p class="result-text">هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام</p>
+    <div id="result" class="result safe hidden">
+      <div class="icon">✓</div>
+      <h3>رابط آمن ✓</h3>
+      <p>
+        هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام
+      </p>
     </div>
 
-  </section>
+  </div>
 
   <script src="app.js"></script>
 </body>
