@@ -443,3 +443,92 @@ body{
 .hidden{
   display:none;
 }
+/* صفحة فحص الرابط */
+.center-page{
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.page-title{
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.page-desc{
+  font-size: 20px;
+  color: #6b6f73;
+  margin-bottom: 25px;
+}
+
+.link-box{
+  background: #f2f2f2;
+  border: 2px solid #d0d0d0;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.link-box label{
+  font-weight: 800;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.link-box input{
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  direction: ltr;
+}
+
+.scan-btn{
+  width: 100%;
+  background: #2f5f45;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.scan-btn:hover{
+  filter: brightness(0.95);
+}
+
+/* النتيجة */
+.result{
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 18px;
+  border: 3px solid #2f5f45;
+  background: #edf6ef;
+}
+
+.result .icon{
+  font-size: 50px;
+  color: #2f5f45;
+  margin-bottom: 10px;
+}
+
+.result h3{
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.result p{
+  font-size: 18px;
+  color: #6b6f73;
+  line-height: 1.8;
+}
+
+.hidden{
+  display: none;
+}
