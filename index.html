@@ -13,8 +13,41 @@
   --danger:#e7b35a;
   --gray:#777;
 }
+<script>
+function checkLink(){
+  const link = document.getElementById("linkInput").value.toLowerCase();
+  const result = document.getElementById("linkResult");
 
-body{
+  result.className = "result-box";
+  result.innerHTML = "";
+  result.classList.remove("hidden");
+
+  if(link.includes("bank") || link.includes("login")){
+    result.classList.add("danger");
+    result.innerHTML = `
+      <div class="result-icon">⛔</div>
+      <h3>رابط غير آمن – احتيال مؤكد</h3>
+      <p>تم الإبلاغ عن هذا الرابط من عدة جهات.<br>لا تقم بفتحه.</p>
+    `;
+  }
+  else if(link.includes("free") || link.includes("offer")){
+    result.classList.add("warning");
+    result.innerHTML = `
+      <div class="result-icon">!</div>
+      <h3>احتيال محتمل</h3>
+      <p>يرجى الحذر قبل إدخال أي بيانات.</p>
+    `;
+  }
+  else{
+    result.classList.add("safe");
+    result.innerHTML = `
+      <div class="result-icon">✔</div>
+      <h3>رابط آمن</h3>
+      <p>لم يتم العثور على تهديدات معروفة.</p>
+    `;
+  }
+}
+</script>body{
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   background:#fff;
   margin:0;
