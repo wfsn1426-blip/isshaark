@@ -146,3 +146,33 @@ button.card{
   border: 2px solid var(--border);
   outline: none;
 }
+<style>
+.result {
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  font-family: system-ui;
+}
+
+.result.warning {
+  background: #FFF9F0;
+  border: 2px solid #F5B74A;
+}
+
+.result h3 {
+  color: #D99A2B;
+  margin-top: 12px;
+}
+
+.result p {
+  color: #6B5A3A;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+}
+</style>
