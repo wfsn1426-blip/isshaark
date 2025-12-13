@@ -205,3 +205,19 @@ body{
   object-fit: contain;
   filter: none;
 }
+.icon-box{
+  width:72px;
+  height:72px;
+  border-radius:16px;
+  border:2px solid #6f8f7d;
+  background:#eef1ef;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.icon{
+  width:34px;
+  height:34px;
+  color:#2f5f45;
+}
