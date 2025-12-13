@@ -4,30 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>فحص رابط</title>
-
   <link rel="stylesheet" href="style.css">
-  <script defer src="app.js"></script>
 </head>
 
 <body>
+  <section class="container check-page">
 
-<section class="container">
+    <h2 class="page-title">فحص رابط مشبوه</h2>
+    <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
 
-  <h2 class="page-title">فحص رابط مشبوه</h2>
-  <p class="page-desc">أدخل الرابط للتحقق من حالته عبر أنظمة الأمن السيبراني</p>
+    <div class="input-card">
+      <div class="input-label">الصق الرابط هنا</div>
 
-  <textarea id="urlInput" placeholder="الصق الرابط هنا"></textarea>
+      <!-- نفس الشكل: نص ثابت داخل المربع مثل الصورة -->
+      <div class="fake-input" id="linkBox">https://ishaarek.my.canva.site</div>
+    </div>
 
-  <button id="checkBtn">🔍 فحص الرابط الآن</button>
+    <button class="scan-btn" type="button" onclick="showSafe()">
+      <span class="scan-icon">⌕</span>
+      فحص الرابط الآن
+    </button>
 
-  <!-- نتيجة الفحص -->
-  <div id="result" class="result hidden">
-    <div class="result-icon" id="resultIcon"></div>
-    <h3 id="resultTitle"></h3>
-    <p id="resultText"></p>
-  </div>
+    <!-- النتيجة -->
+    <div id="resultSafe" class="result-card safe hidden">
+      <div class="result-icon">
+        <div class="ring"></div>
+        <div class="check">✓</div>
+      </div>
 
-</section>
+      <h3 class="result-title">رابط آمن ✓</h3>
+      <p class="result-text">هذا الرابط لم يتم الإبلاغ عنه في قواعد بياناتنا ويبدو آمنًا للاستخدام</p>
+    </div>
 
+  </section>
+
+  <script src="app.js"></script>
 </body>
 </html>
