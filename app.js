@@ -8,52 +8,45 @@ window.go = function (page) {
 /* ===============================
    فحص الرابط
 ================================ */
-function checkLink(){
-  const link = document.getElementById("linkInput").value.trim();
-  const box = document.getElementById("resultBox");
-  const title = document.getElementById("resultTitle");
-  const desc = document.getElementById("resultDesc");
-  const icon = document.getElementById("resultIcon");
-function analyzeText(){
-  const text = document.getElementById("textInput").value.trim();
-  const result = document.getElementById("aiResult");
+function checkLink() {
+  const input = document.getElementById("linkInput").value.trim();
+  const result = document.getElementById("result");
 
-  if(text === ""){
-    alert("الرجاء إدخال نص للتحليل");
+  result.className = "result";
+  result.innerHTML = "";
+
+  if (!input) {
     return;
   }
 
-  // حالياً نتيجة تجريبية (عرض فقط)
-  result.classList.remove("hidden");
-}  box.className = "result"; // reset
-  box.classList.remove("hidden");
-
-  if(link === ""){
-    title.textContent = "لم يتم إدخال رابط";
-    desc.textContent = "يرجى إدخال رابط لفحصه";
-    icon.textContent = "⚠️";
-    box.classList.add("warning");
-    return;
+  // HTTPS = آمن
+  if (input.startsWith("https://")) {
+    result.classList.add("safe");
+    result.innerHTML = `
+      <div class="icon">✓</div>
+      <h3>رابط آمن ✓</h3>
+      <p>هذا الرابط لم يتم الإبلاغ عنه ويبدو آمناً للاستخدام</p>
+    `;
   }
 
-  // منطق تجريبي (Demo)
-  if(link.includes("bank") || link.includes("verify")){
-    title.textContent = "احتيال مؤكد";
-    desc.textContent = "تم رصد هذا الرابط كتهديد خطير ويُنصح بعدم فتحه.";
-    icon.textContent = "❌";
-    box.classList.add("danger");
+  // HTTP = خطر عالي
+  else if (input.startsWith("http://")) {
+    result.classList.add("danger");
+    result.innerHTML = `
+      <div class="icon">!</div>
+      <h3>رابط خطر – احتيال مؤكد</h3>
+      <p>هذا الرابط غير مشفّر وقد يُستخدم لسرقة بياناتك</p>
+    `;
+  }
 
-  }else if(link.includes("http")){
-    title.textContent = "رابط مزيف محتمل";
-    desc.textContent = "لم يتم التأكد من موثوقية الرابط بالكامل، يرجى الحذر.";
-    icon.textContent = "⚠️";
-    box.classList.add("warning");
-
-  }else{
-    title.textContent = "رابط آمن";
-    desc.textContent = "لم يتم تسجيل أي بلاغات على هذا الرابط حتى الآن.";
-    icon.textContent = "✅";
-    box.classList.add("safe");
+  // بدون بروتوكول
+  else {
+    result.classList.add("warning");
+    result.innerHTML = `
+      <div class="icon">⚠</div>
+      <h3>رابط مزيف محتمل</h3>
+      <p>يُرجى التأكد من صحة الرابط قبل التفاعل معه</p>
+    `;
   }
 }
 function checkURL() {
