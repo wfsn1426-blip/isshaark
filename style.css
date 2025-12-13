@@ -1,16 +1,17 @@
 :root{
   --green:#2f5f45;
-  --green-2:#2b5640;
+  --green2:#2a5641;
+  --bg:#f2f3f3;
+  --card:#e7e7e7;
   --border:#6f8f7d;
-  --bg:#f3f4f4;
-  --card:#e9e9ea;
   --text:#2b2b2b;
-  --muted:#6b6f73;
-  --radius:18px;
+  --muted:#6a6f73;
+  --shadow: 0 10px 22px rgba(0,0,0,.10);
 }
 
 *{box-sizing:border-box}
 html,body{height:100%}
+
 body{
   margin:0;
   background:var(--bg);
@@ -19,161 +20,170 @@ body{
   direction: rtl;
 }
 
-/* container */
-.container{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 18px 40px;
-}
-
-/* header (مثل أبشر) */
-.topbar{
-  background: linear-gradient(0deg,var(--green),var(--green-2));
+/* ====== HEADER (الشريط الأخضر مثل الصورة) ====== */
+.header{
+  background: linear-gradient(0deg, var(--green), var(--green2));
   color:#fff;
-  padding: 22px 0 26px;
+  padding: 18px 18px 26px;
   box-shadow: 0 2px 14px rgba(0,0,0,.12);
-}
-.topbar .container{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
+  gap:16px;
 }
-.topbar .left,
-.topbar .right{
-  width:46px;height:46px;
-  display:grid;place-items:center;
-  border-radius:50%;
+
+/* أيقونة القائمة */
+.menu-icon{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius: 999px;
   background: rgba(255,255,255,.12);
   border: 1px solid rgba(255,255,255,.18);
+  font-size:22px;
+  line-height:1;
 }
-.topbar .brand{
+
+/* شعار الوسط (الأيقونة + النص) */
+.logo{
   display:flex;
   align-items:center;
-  gap:14px;
-  font-weight:700;
-  font-size:34px;
-  letter-spacing:.5px;
-}
-.topbar .brand .bars{
-  opacity:.9;
-  font-size:22px;
-}
-
-/* عنوان الخدمات داخل الهيدر */
-.hero{
-  color:#eaf1ed;
-  text-align:right;
-  padding-top:10px;
-}
-.hero h2{
-  margin: 10px 0 4px;
-  font-size: 30px;
-  font-weight:700;
-}
-.hero p{
-  margin:0;
-  opacity:.9;
-  font-weight:600;
-}
-
-/* محتوى الصفحة */
-.page-title{
-  margin: 26px 0 6px;
-  font-size: 36px;
+  justify-content:center;
+  gap:10px;
   font-weight:800;
-}
-.page-desc{
-  margin: 0 0 24px;
-  color:var(--muted);
-  line-height:1.9;
-  font-size:18px;
+  font-size:34px;
+  letter-spacing:.4px;
 }
 
-/* cards */
-.cards{
+/* الأيقونة الصغيرة داخل الشعار */
+.shield{
+  width:34px;
+  height:34px;
+  opacity:.95;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.18));
+}
+
+/* أيقونة الحساب */
+.profile-icon{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  font-size:20px;
+}
+
+/* ====== MAIN CONTENT ====== */
+.main{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 18px 42px;
+}
+
+/* أزرار كبار السن (خليتها صغيرة أعلى اليسار مثل أدوات) */
+.accessibility-buttons{
+  display:flex;
+  gap:10px;
+  justify-content:flex-start;
+  margin: 12px 0 16px;
+}
+.accessibility-buttons button{
+  border: 1px solid rgba(0,0,0,.12);
+  background:#fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* عنوان الصفحة */
+.title{
+  margin: 8px 0 6px;
+  font-size: 38px;
+  font-weight: 900;
+  color:#2c2c2c;
+}
+
+/* الوصف تحت العنوان */
+.subtitle{
+  margin: 0 0 24px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 18px;
+  max-width: 900px;
+}
+
+/* ====== GRID (نخليها قائمة بطاقات مثل الصورة) ====== */
+.grid{
   display:flex;
   flex-direction:column;
   gap:18px;
 }
 
-.card{
-  background:var(--card);
-  border: 2px solid rgba(0,0,0,.07);
-  border-radius: var(--radius);
+/* كل بطاقة */
+.box{
+  position:relative;
+  background: var(--card);
+  border: 2px solid rgba(0,0,0,.08);
+  border-radius: 18px;
   padding: 18px 18px;
   display:flex;
   align-items:center;
+  justify-content:space-between;
   gap:18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-}
-
-.card.active{
-  border-color: var(--border);
-  box-shadow: 0 10px 24px rgba(47,95,69,.12);
-}
-
-.card .arrow{
-  flex:0 0 auto;
-  width:40px;height:40px;
-  display:grid;place-items:center;
-  color:var(--green);
-  font-size:22px;
-  opacity:.9;
-}
-
-.card .text{
-  flex:1;
-}
-.card .text h3{
-  margin:0 0 6px;
-  font-size:28px;
-  font-weight:800;
-  color:#2f2f2f;
-}
-.card .text p{
-  margin:0;
-  color:#5c6064;
-  font-size:18px;
-  line-height:1.8;
-}
-
-.card .iconbox{
-  flex:0 0 auto;
-  width:76px;height:76px;
-  border-radius:16px;
-  border: 2px solid var(--border);
-  background: #eef1ef;
-  display:grid;place-items:center;
-}
-.card .iconbox svg{
-  width:34px;height:34px;
-  stroke: var(--green);
-  fill:none;
-  stroke-width:2.2;
-}
-
-/* زر العودة */
-.back{
-  margin-top: 22px;
-  background: #dfe6e1;
-  border: 2px solid var(--border);
-  border-radius: 16px;
-  padding: 18px 16px;
-  text-align:center;
-  font-weight:800;
-  font-size:22px;
-  color: var(--green);
+  box-shadow: var(--shadow);
   cursor:pointer;
   user-select:none;
 }
-.back:hover{filter:brightness(.98)}
 
-/* responsive */
-@media (max-width:640px){
-  .topbar .brand{font-size:28px}
-  .page-title{font-size:28px}
-  .card .text h3{font-size:22px}
-  .card .text p{font-size:16px}
-  .card .iconbox{width:66px;height:66px}
+/* تأثير مرور */
+.box:hover{
+  filter: brightness(.99);
+  transform: translateY(-1px);
+  transition: .15s ease;
+}
+
+/* النص داخل البطاقة (اسم الخدمة) */
+.box p{
+  margin:0;
+  font-size: 26px;
+  font-weight: 800;
+  color:#2f2f2f;
+}
+
+/* أيقونة البطاقة (يمين) */
+.icon-img{
+  width:70px;
+  height:70px;
+  border-radius: 16px;
+  padding: 14px;
+  border: 2px solid var(--border);
+  background:#eef1ef;
+}
+
+/* سهم الرجوع (يسار البطاقة) - نسويه pseudo */
+.box::before{
+  content:"←";
+  position:absolute;
+  left:18px;
+  color: var(--green);
+  font-size: 26px;
+  opacity:.9;
+}
+
+/* نخلي النص مو ملتصق بالسهم */
+.box{
+  padding-left: 64px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 700px){
+  .title{font-size: 28px;}
+  .subtitle{font-size:16px;}
+  .logo{font-size: 28px;}
+  .box p{font-size:20px;}
+  .icon-img{width:62px;height:62px;padding:12px;}
 }
