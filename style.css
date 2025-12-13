@@ -784,3 +784,15 @@ body{
   color: var(--green-2);
   text-decoration: none;
 }
+report-card {
+  display: block;
+  cursor: pointer;
+}
+
+.report-card * {
+  pointer-events: none;
+}
+
+.report-card {
+  pointer-events: auto;
+}
