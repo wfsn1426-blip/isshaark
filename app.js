@@ -134,3 +134,15 @@ function sendChat() {
 function showSafe(){
   document.getElementById("resultSafe").classList.remove("hidden");
 }
+function checkLink(){
+  const input = document.getElementById("linkInput").value.trim();
+  const result = document.getElementById("result");
+
+  if(input === ""){
+    alert("الرجاء إدخال رابط");
+    return;
+  }
+
+  // حالياً نتيجة تجريبية (عرض فقط)
+  result.classList.remove("hidden");
+}
