@@ -154,3 +154,42 @@ body{
   max-width: 600px;
   margin: 0 auto;
 }
+/* ===== الشريط العلوي ===== */
+.top-bar {
+  background: #0f6d3f;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ===== الهيرو ===== */
+.hero {
+  text-align: center;
+  padding: 40px 20px 30px;
+}
+
+.hero-logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: 22px;
+  color: #2f3e3a;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 14px;
+  color: #6b6b6b;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
