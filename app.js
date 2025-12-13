@@ -69,3 +69,6 @@ function checkLink(){
     box.classList.add("safe");
   }
 }
+function showSafe(){
+  document.getElementById("resultSafe").classList.remove("hidden");
+}
