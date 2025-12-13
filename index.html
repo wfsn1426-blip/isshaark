@@ -1,69 +1,87 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>إشعارك - نظام الإنذار المبكر</title>
-
-  <!-- نفس ملف التنسيق القديم -->
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إشعارك</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
 
-  <!-- العنوان -->
-  <section class="hero">
-    <h1>إشعارك - نظام الإنذار المبكر</h1>
-    <p>
-      خدمة وطنية داخل أبشر تساعدك على التحقق من الروابط والرسائل والأرقام المشبوهة
-      وتعتمد على قواعد بيانات أمنية وتحليل ذكي.
-    </p>
-  </section>
+  <main class="wrap">
 
-  <!-- الكروت (نفس الشكل القديم لكن تفاعلية) -->
-  <section class="services">
+    <div class="hero">
+      <div class="hero-icon">⚠️</div>
+      <h1>إشعارك - نظام الإنذار المبكر ضد الاحتيال</h1>
+      <p>
+        خدمة وطنية داخل أبشر تساعدك على التحقق من الروابط والرسائل والأرقام المشبوهة
+        واعتماد تنبيهات فورية قبل وقوع الاحتيال.
+      </p>
+    </div>
 
-    <a href="./report.html" class="service-card">
-      <div class="service-content">
-        <h2>رفع بلاغ</h2>
-        <p>أبلغ عن رقم، رسالة، مكالمة أو رابط مشبوه</p>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+    <!-- القائمة -->
+    <section class="list" aria-label="خدمات إشعارك">
 
-    <a href="./check.html" class="service-card">
-      <div class="service-content">
-        <h2>فحص رابط</h2>
-        <p>أدخل أي رابط ليتم فحصه وتحديد مستوى الخطورة</p>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+      <button class="card" data-go="report.html">
+        <span class="arrow">←</span>
+        <span class="text">
+          <span class="title">رفع بلاغ</span>
+          <span class="sub">أبلغ عن رقم، رسالة، مكالمة أو رابط مشبوه يتم تحليله فورًا</span>
+        </span>
+        <span class="iconbox">!</span>
+      </button>
 
-    <a href="./smart.html" class="service-card">
-      <div class="service-content">
-        <h2>التحليل الذكي</h2>
-        <p>تحليل الرسائل أو النصوص المشبوهة باستخدام الذكاء الاصطناعي</p>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+      <button class="card" data-go="check.html">
+        <span class="arrow">←</span>
+        <span class="text">
+          <span class="title">فحص رابط</span>
+          <span class="sub">أدخل أي رابط ليتم فحصه بواسطة الذكاء الاصطناعي وتحديد مستوى الخطورة</span>
+        </span>
+        <span class="iconbox">✓</span>
+      </button>
 
-    <a href="./notifications.html" class="service-card">
-      <div class="service-content">
-        <h2>إدارة الإشعارات</h2>
-        <p>التحكم في التنبيهات وقنوات الإشعار</p>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+      <button class="card" data-go="smart.html">
+        <span class="arrow">←</span>
+        <span class="text">
+          <span class="title">التحليل الذكي</span>
+          <span class="sub">حلل الرسائل أو النصوص المشبوهة باستخدام الذكاء الاصطناعي</span>
+        </span>
+        <span class="iconbox">☺︎</span>
+      </button>
 
-    <a href="./logs.html" class="service-card">
-      <div class="service-content">
-        <h2>سجل البلاغات</h2>
-        <p>عرض البلاغات السابقة مع التاريخ والوقت</p>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+      <button class="card" data-go="alerts.html">
+        <span class="arrow">←</span>
+        <span class="text">
+          <span class="title">تنبيهات الاحتيال</span>
+          <span class="sub">اطلع على التحذيرات العامة الصادرة من الجهات المختصة</span>
+        </span>
+        <span class="iconbox">🔔</span>
+      </button>
 
-  </section>
+      <button class="card" data-go="logs.html">
+        <span class="arrow">←</span>
+        <span class="text">
+          <span class="title">سجل البلاغات</span>
+          <span class="sub">استعرض جميع بلاغاتك السابقة ونتائج التحقق</span>
+        </span>
+        <span class="iconbox">≡</span>
+      </button>
 
+      <button class="card card-active" data-go="notifications.html">
+        <span class="arrow">←</span>
+        <span class="text">
+          <span class="title">إدارة الإشعارات</span>
+          <span class="sub">فعّل أو أوقف تنبيهات الاحتيال وحدد قناة الإشعار المناسبة لك</span>
+        </span>
+        <span class="iconbox">⚙︎</span>
+      </button>
+
+    </section>
+
+    <a class="back-main" href="./index.html">العودة إلى أبشر</a>
+
+  </main>
+
+  <script src="./app.js"></script>
 </body>
 </html>
