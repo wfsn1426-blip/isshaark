@@ -31,3 +31,41 @@ btn.onclick = () => {
 
   result.classList.remove("hidden");
 };
+function checkLink(){
+  const link = document.getElementById("linkInput").value.trim();
+  const box = document.getElementById("resultBox");
+  const title = document.getElementById("resultTitle");
+  const desc = document.getElementById("resultDesc");
+  const icon = document.getElementById("resultIcon");
+
+  box.className = "result"; // reset
+  box.classList.remove("hidden");
+
+  if(link === ""){
+    title.textContent = "لم يتم إدخال رابط";
+    desc.textContent = "يرجى إدخال رابط لفحصه";
+    icon.textContent = "⚠️";
+    box.classList.add("warning");
+    return;
+  }
+
+  // منطق تجريبي (Demo)
+  if(link.includes("bank") || link.includes("verify")){
+    title.textContent = "احتيال مؤكد";
+    desc.textContent = "تم رصد هذا الرابط كتهديد خطير ويُنصح بعدم فتحه.";
+    icon.textContent = "❌";
+    box.classList.add("danger");
+
+  }else if(link.includes("http")){
+    title.textContent = "رابط مزيف محتمل";
+    desc.textContent = "لم يتم التأكد من موثوقية الرابط بالكامل، يرجى الحذر.";
+    icon.textContent = "⚠️";
+    box.classList.add("warning");
+
+  }else{
+    title.textContent = "رابط آمن";
+    desc.textContent = "لم يتم تسجيل أي بلاغات على هذا الرابط حتى الآن.";
+    icon.textContent = "✅";
+    box.classList.add("safe");
+  }
+}
